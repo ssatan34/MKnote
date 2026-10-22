@@ -18,6 +18,14 @@ Windows 桌面 Markdown 便签，集成快速记录、独立待办、多标签�
 - **桌面待办**：Quick Todo 处理任务与提醒，Quick Pocket 暂存文本、命令和路径。
 - **连接已有工具**：按需配置 Obsidian、思源笔记、S3/MinIO、图床或 AI 服务。
 
+## 24 秒认识 MKnote
+
+随手记录、直接编辑 Markdown，再把独立便签收成胶囊。
+
+https://github.com/user-attachments/assets/463de8d9-8b38-4ea5-adb6-7bb333cd90ac
+
+演示使用虚构笔记；配乐由 [YuE2](https://github.com/multimodal-art-projection/YuE) 生成。
+
 ## 功能概览
 
 | 类别 | 能力 |
