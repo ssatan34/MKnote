@@ -1,0 +1,23 @@
+{
+  "name": "mknote-visual-editor-phase1a-poc",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "node --experimental-strip-types --test tests/phase1aContract.test.mjs tests/phase1aRawHtmlComment.test.mjs tests/phase1aBenchmarkDiagnosticContract.test.mjs tests/phase1aHarnessContract.test.mjs tests/phase1aT5OwnerLauncherContract.test.mjs tests/phase1aBenchmarkMode.test.mjs tests/phase1aWebview2BenchmarkContract.test.mjs tests/phase1aEditorStructure.test.mjs tests/phase1aDiagnosticFixture.test.mjs tests/phase1aTimingContract.test.mjs tests/phase1aTableRenderingContract.test.mjs tests/phase1aDomVirtualization.test.mjs tests/phase1aTableAlignmentRuntime.test.mjs tests/fastGfmTableParser.test.mjs",
+    "test:e2e": "playwright test",
+    "test:webview2": "node scripts/phase1a-webview2-e2e.mjs",
+    "test:webview2:ime": "node scripts/phase1a-webview2-ime-e2e.mjs",
+    "test:webview2:benchmark": "node scripts/phase1a-webview2-benchmark.mjs"
+  },
+  "dependencies": {
+    "@milkdown/kit": "7.19.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "typescript": "5.8.3",
+    "vite": "5.4.11"
+  }
+}

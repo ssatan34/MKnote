@@ -1,0 +1,280 @@
+/* ─── Timeline View Popup ─────────────────────────────────────────── */
+
+/*
+  The popup sits above the statusbar.
+  It is positioned absolutely inside .compact-statusbar's nearest
+  positioned ancestor (the .compact-view root, which has position:relative).
+  We use a fixed z-index so it floats above everything.
+*/
+.timeline-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--mk-z-modal);
+  /* transparent click-blocker — outside clicks close the popup */
+  background: transparent;
+}
+
+.timeline-popup {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 400px;
+  max-width: calc(100vw - 24px);
+
+  /* Fixed height so the viewport always fills it, not squashed */
+  height: min(520px, calc(100vh - 88px));
+
+  background: var(--mk-parchment);
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-md);
+  box-shadow:
+    0 8px 32px color-mix(in srgb, var(--mk-ink) 14%, transparent),
+    0 2px 8px  color-mix(in srgb, var(--mk-ink) 8%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  animation: timeline-in 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+[data-theme="dark"] .timeline-popup {
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+@keyframes timeline-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* ─── Header ─────────────────────────────────────────────────────── */
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  height: 34px;
+  border-bottom: 1px solid var(--mk-divider);
+  flex-shrink: 0;
+}
+
+.timeline-header-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mk-body-muted);
+  flex: 1;
+  user-select: none;
+  letter-spacing: 0.04em;
+}
+
+.timeline-header-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: none;
+  border-radius: var(--mk-radius-sm);
+  cursor: pointer;
+  color: var(--mk-body-muted);
+  transition: background 120ms, color 120ms;
+  padding: 0;
+}
+
+.timeline-header-close:hover {
+  background: var(--mk-interactive-hover);
+  color: var(--mk-ink);
+}
+
+/* ─── List viewport ──────────────────────────────────────────────── */
+
+.timeline-viewport {
+  position: relative;
+  overflow: hidden;
+  flex: 1 1 0;    /* fills remaining space in popup; 0 base avoids size fighting */
+  min-height: 0;
+}
+
+/* fade masks */
+.timeline-fade-top,
+.timeline-fade-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 52px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.timeline-fade-top {
+  top: 0;
+  background: linear-gradient(to bottom, var(--mk-parchment) 0%, transparent 100%);
+}
+
+.timeline-fade-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, var(--mk-parchment) 0%, transparent 100%);
+}
+
+/* vertical timeline track */
+.timeline-track {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--mk-hairline);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/*
+  Animated list container.
+  translateY is driven entirely by inline style (JS).
+  CSS transition provides the smooth spring-like animation.
+  NO extra transition on .is-snapping — one transition rule is enough.
+*/
+.timeline-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  will-change: transform;
+  transition: transform 0.22s cubic-bezier(0.25, 1, 0.35, 1);
+}
+
+/* ─── Date separator row ─────────────────────────────────────────── */
+
+.timeline-sep {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 14px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.timeline-sep-diamond {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  background: var(--mk-pearl);
+  border: 1.5px solid color-mix(in srgb, var(--mk-primary) 45%, var(--mk-hairline));
+  z-index: 2;
+}
+
+.timeline-sep-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mk-primary);
+  white-space: nowrap;
+}
+
+/* ─── Note row ───────────────────────────────────────────────────── */
+
+.timeline-note {
+  display: flex;
+  align-items: center;
+  padding-left: 14px;
+  padding-right: 14px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  will-change: opacity, transform;
+  transform-origin: left center;
+  /* opacity + scale are set via inline style; CSS transition animates them */
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.timeline-note:hover {
+  background: var(--mk-interactive-hover);
+}
+
+/* colored dot on timeline track */
+.timeline-dot {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+  flex-shrink: 0;
+  transition:
+    width 0.18s ease,
+    height 0.18s ease,
+    left  0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+/* note content area */
+.timeline-note-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.timeline-note-title {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: font-size 0.15s ease, color 0.15s ease;
+}
+
+.timeline-note-time {
+  flex-shrink: 0;
+  margin-left: 10px;
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  transition: font-size 0.15s ease, color 0.15s ease;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────── */
+
+.timeline-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  height: 24px;
+  border-top: 1px solid var(--mk-divider);
+  flex-shrink: 0;
+}
+
+.timeline-footer-hint,
+.timeline-footer-count {
+  font-size: 10px;
+  color: color-mix(in srgb, var(--mk-body-muted) 55%, transparent);
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+
+.timeline-footer-count {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Empty state ────────────────────────────────────────────────── */
+
+.timeline-empty {
+  padding: 32px 20px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--mk-body-muted);
+  user-select: none;
+}

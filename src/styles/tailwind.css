@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@import "./ui-foundations.css";
+
+/*
+ * shadcn/ui 语义变量 — 桥接到 MKnote tokens（tokens.css）
+ * 现有 data-theme / data-*-theme 切换时，组件自动跟随。
+ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: var(--mk-radius-sm);
+  --radius-md: var(--mk-radius-md);
+  --radius-lg: calc(var(--mk-radius-md) + 2px);
+  --radius-xl: calc(var(--mk-radius-md) + 6px);
+
+  --font-sans: var(--mk-font-text);
+  --font-display: var(--mk-font-display);
+}
+
+@layer base {
+  :root {
+    --background: var(--mk-canvas);
+    --foreground: var(--mk-ink);
+    --card: var(--mk-canvas);
+    --card-foreground: var(--mk-ink);
+    --popover: var(--mk-canvas);
+    --popover-foreground: var(--mk-ink);
+    --primary: var(--mk-primary);
+    --primary-foreground: var(--mk-on-primary);
+    --secondary: var(--mk-pearl);
+    --secondary-foreground: var(--mk-ink);
+    --muted: var(--mk-pearl);
+    --muted-foreground: var(--mk-body-muted);
+    --accent: var(--mk-pearl);
+    --accent-foreground: var(--mk-ink);
+    --destructive: #dc2626;
+    --destructive-foreground: #ffffff;
+    --border: var(--mk-hairline);
+    --input: var(--mk-hairline);
+    --ring: var(--mk-primary-focus);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--mk-font-text);
+  }
+}

@@ -1,0 +1,169 @@
+.search-popover--title {
+  width: 296px;
+  border-radius: var(--mk-radius-lg, 16px);
+}
+
+.title-search-field {
+  position: relative;
+  width: 280px;
+  height: 44px;
+}
+
+.title-search-field input {
+  box-sizing: border-box;
+  width: 280px;
+  height: 42px;
+  padding: 0.9rem 0.75rem 0.6rem;
+  padding-right: 3rem;
+  border: 1.5px solid var(--mk-body-muted);
+  border-radius: 80px;
+  outline: none;
+  background: none;
+  color: var(--mk-ink);
+  font: inherit;
+  font-size: 14px;
+  transition: border var(--mk-motion-fast) var(--mk-motion-ease-standard);
+}
+
+.title-search-field input:focus {
+  border: 1.5px solid var(--mk-primary);
+}
+
+.title-search-field label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  padding: 0;
+  color: var(--mk-body-muted);
+  font-size: 14px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  transition:
+    top var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    transform var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    background var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    color var(--mk-motion-fast) var(--mk-motion-ease-standard);
+}
+
+.title-search-field.is-focused label,
+.title-search-field.has-value label {
+  top: 0;
+  background: var(--mk-primary);
+  border-radius: 20px;
+  padding: 0.2em 0.6em;
+  color: var(--mk-on-primary);
+  transform: translateY(-50%) scale(0.8);
+}
+
+.title-search-field__search,
+.title-search-field__clear {
+  position: absolute;
+  display: inline-flex;
+  width: 1.75em;
+  height: 1.75em;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    right 300ms var(--mk-motion-ease-out),
+    opacity var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    transform var(--mk-motion-fast) var(--mk-motion-ease-out),
+    background var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    color var(--mk-motion-fast) var(--mk-motion-ease-standard);
+  transition-delay: 100ms;
+}
+
+.title-search-field__search {
+  top: -1em;
+  right: 80%;
+  background: var(--mk-primary);
+  color: var(--mk-on-primary);
+  opacity: 0;
+  transform: translateX(-8px) scale(0.1);
+}
+
+.title-search-field.is-focused .title-search-field__search,
+.title-search-field.has-value .title-search-field__search {
+  right: 10%;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  transition-delay: 0s;
+}
+
+.title-search-field__search:hover {
+  background: var(--mk-primary-focus);
+}
+
+.title-search-field__clear {
+  top: 0.75em;
+  right: 7%;
+  background: transparent;
+  color: var(--mk-body-muted);
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(-90deg) scale(0.1);
+}
+
+.title-search-field.has-value .title-search-field__clear {
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotate(0) scale(1);
+}
+
+.title-search-field.is-focused .title-search-field__clear {
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotate(0) scale(1);
+}
+
+.title-search-field__clear:hover {
+  background: var(--mk-interactive-hover);
+  color: var(--mk-primary);
+}
+
+.title-search-field.slow-motion label {
+  transition-duration: 520ms;
+}
+
+.title-search-field.slow-motion .title-search-field__search,
+.title-search-field.slow-motion .title-search-field__clear {
+  transition-duration: 620ms;
+}
+
+.title-search-field.slow-motion input {
+  transition-duration: 420ms;
+}
+
+.title-search-field__search:focus-visible,
+.title-search-field__clear:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+
+.search-popover--title .search-results {
+  margin-top: 4px;
+}
+
+.search-popover--title .search-results button {
+  min-height: 28px;
+  padding: 2px 8px;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.search-popover--title .search-results p {
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-search-field input,
+  .title-search-field label,
+  .title-search-field__search,
+  .title-search-field__clear {
+    transition-duration: 0.01ms;
+  }
+}

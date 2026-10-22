@@ -1,0 +1,409 @@
+/* ── 涂鸦 Modal — MKnote 风格 ───────────────────────────────────── */
+
+.image-doodle-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--mk-z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.image-doodle-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(96vw, 960px);
+  max-height: 90vh;
+  border-radius: var(--mk-radius-md);
+  border: 1px solid var(--mk-hairline);
+  background: color-mix(in srgb, var(--mk-canvas) 97%, transparent);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+/* ── 工具栏 ── */
+.image-doodle-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--mk-hairline);
+  background: var(--mk-parchment);
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+.image-doodle-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-doodle-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 分隔线 */
+.image-doodle-sep {
+  width: 1px;
+  height: 18px;
+  background: var(--mk-hairline);
+  flex-shrink: 0;
+}
+
+/* ── 颜色点 ── */
+.image-doodle-colors {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.image-doodle-color-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: var(--dot-color, #ccc);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.1s, border-color 0.1s;
+  outline: none;
+  /* 白色点加细边 */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+}
+
+.image-doodle-color-dot:hover {
+  transform: scale(1.18);
+}
+
+.image-doodle-color-dot.active {
+  border-color: var(--mk-primary);
+  transform: scale(1.18);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12), 0 0 0 3px color-mix(in srgb, var(--mk-primary) 30%, transparent);
+}
+
+/* ── 笔宽按钮 ── */
+.image-doodle-widths {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.image-doodle-width-dot {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--mk-radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.1s, border-color 0.1s;
+  outline: none;
+}
+
+.image-doodle-width-dot:hover {
+  background: var(--mk-interactive-hover);
+}
+
+.image-doodle-width-dot.active {
+  background: var(--mk-interactive-active);
+  border-color: var(--mk-primary);
+}
+
+.image-doodle-width-preview {
+  border-radius: 50%;
+  background: var(--mk-ink);
+  display: block;
+  min-width: 4px;
+  min-height: 4px;
+}
+
+/* ── 橡皮擦 ── */
+.image-doodle-eraser {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--mk-radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--mk-icon);
+  padding: 0;
+  transition: background 0.1s, border-color 0.1s;
+  outline: none;
+}
+
+.image-doodle-eraser:hover {
+  background: var(--mk-interactive-hover);
+}
+
+.image-doodle-eraser.active {
+  background: var(--mk-interactive-active);
+  border-color: var(--mk-primary);
+  color: var(--mk-primary);
+}
+
+/* ── 工具组（画笔/矩形/椭圆/文字/橡皮） ── */
+.image-doodle-tool-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.image-doodle-tool-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--mk-radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--mk-icon);
+  padding: 0;
+  transition: background 0.1s, border-color 0.1s;
+  outline: none;
+}
+
+.image-doodle-tool-btn:hover {
+  background: var(--mk-interactive-hover);
+}
+
+.image-doodle-tool-btn.active {
+  background: var(--mk-interactive-active);
+  border-color: var(--mk-primary);
+  color: var(--mk-primary);
+}
+
+/* ── 字号输入 ── */
+.image-doodle-fontsize-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--mk-body-muted);
+}
+
+.image-doodle-fontsize-input {
+  width: 48px;
+  height: 26px;
+  padding: 0 6px;
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-sm);
+  background: var(--mk-pearl);
+  color: var(--mk-ink);
+  font: inherit;
+  font-size: 12px;
+  text-align: center;
+  outline: none;
+}
+
+.image-doodle-fontsize-input:focus {
+  border-color: var(--mk-primary);
+}
+
+/* ── canvas container（相对定位，供文字浮层使用） ── */
+.image-doodle-canvas-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* ── 文字输入浮层 ── */
+.image-doodle-text-input {
+  position: absolute;
+  min-width: 80px;
+  max-width: 400px;
+  padding: 2px 4px;
+  border: 1.5px dashed var(--mk-primary);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  color: inherit; /* 颜色由 style 传入 */
+  font-family: system-ui, sans-serif;
+  font-weight: 500;
+  outline: none;
+  transform: translateY(-100%);
+  z-index: 10;
+  line-height: 1.2;
+}
+
+.image-doodle-text-input::placeholder {
+  color: rgba(128, 128, 128, 0.6);
+  font-size: 0.9em;
+}
+.image-doodle-btn {
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-sm);
+  background: var(--mk-pearl);
+  color: var(--mk-ink);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s, transform 0.08s;
+  outline: none;
+}
+
+.image-doodle-btn:hover:not(:disabled) {
+  background: var(--mk-interactive-hover);
+}
+
+.image-doodle-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.image-doodle-btn.primary {
+  background: var(--mk-primary);
+  color: var(--mk-on-primary);
+  border-color: transparent;
+  font-weight: 500;
+}
+
+.image-doodle-btn.primary:hover:not(:disabled) {
+  background: var(--mk-primary);
+}
+
+.image-doodle-btn.primary.mk-save-button {
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: #333333;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 6px 24px 0 color-mix(in srgb, var(--mk-ink) 20%, transparent);
+}
+
+.image-doodle-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* ── 画布区域 ── */
+.image-doodle-canvas-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: color-mix(in srgb, var(--mk-pearl) 40%, var(--mk-canvas));
+}
+
+.image-doodle-canvas {
+  max-width: 100%;
+  height: auto;
+  touch-action: none;
+  cursor: crosshair;
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-sm);
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.image-doodle-canvas.is-eraser {
+  cursor: cell;
+}
+
+.image-doodle-canvas.is-loading {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.image-doodle-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: var(--mk-body-muted);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+/* ── 保存后上传提示 chip ── */
+.image-doodle-upload-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--mk-hairline);
+  background: color-mix(in srgb, var(--mk-primary) 8%, var(--mk-parchment));
+  font-size: 12px;
+  color: var(--mk-ink);
+  flex-shrink: 0;
+  animation: mk-chip-slide-in 0.18s ease;
+}
+
+@keyframes mk-chip-slide-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.image-doodle-upload-chip span {
+  color: var(--mk-body-muted);
+  flex-shrink: 0;
+}
+
+.image-doodle-chip-upload {
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid var(--mk-primary);
+  border-radius: var(--mk-radius-pill);
+  background: transparent;
+  color: var(--mk-primary);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.1s;
+  white-space: nowrap;
+}
+
+.image-doodle-chip-upload:hover {
+  background: color-mix(in srgb, var(--mk-primary) 12%, transparent);
+}
+
+.image-doodle-chip-dismiss {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--mk-body-muted);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.1s;
+}
+
+.image-doodle-chip-dismiss:hover {
+  background: var(--mk-interactive-hover);
+  color: var(--mk-ink);
+}

@@ -1,0 +1,67 @@
+.settings-btn {
+  position: relative;
+  display: inline-flex;
+  width: var(--mk-control-size-sm, 28px);
+  min-width: var(--mk-control-size-sm, 28px);
+  height: var(--mk-control-size-sm, 28px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--mk-radius-sm, 8px);
+  background: transparent;
+  color: var(--mk-icon);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  transition: background var(--mk-motion-fast) var(--mk-motion-ease-standard), color var(--mk-motion-fast) var(--mk-motion-ease-standard);
+}
+
+.settings-btn:hover,
+.settings-btn.active {
+  background: var(--mk-control-bg-hover);
+  color: var(--mk-primary);
+}
+
+.settings-btn:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+
+.settings-btn:active { transform: scale(0.95); }
+
+.settings-btn .bar {
+  position: relative;
+  display: flex;
+  width: 15px;
+  height: 1.5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--mk-icon) 72%, transparent);
+}
+
+.settings-btn .bar::before {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border: 1px solid var(--mk-canvas);
+  border-radius: 50%;
+  background: var(--mk-primary);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--mk-primary) 22%, transparent);
+  content: "";
+  transition: transform 300ms var(--mk-motion-ease-standard);
+}
+
+.settings-btn .bar1::before { transform: translateX(-3px); }
+.settings-btn .bar2::before { transform: translateX(3px); }
+.settings-btn:hover .bar1::before,
+.settings-btn.active .bar1::before { transform: translateX(3px); }
+.settings-btn:hover .bar2::before,
+.settings-btn.active .bar2::before { transform: translateX(-3px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .settings-btn,
+  .settings-btn .bar::before { transition-duration: 0.01ms; }
+}

@@ -1,0 +1,17 @@
+{
+  "upstream": "https://github.com/88250/lute",
+  "commit": "ead82ece3dcf31cf1399fc41fd44b721c10059de",
+  "path": "javascript/lute.min.js",
+  "reportedVersion": "1.7.6",
+  "goVersionFromHeader": "go1.20.14",
+  "canonicalGitBlob": "8e2d73c988a51d9291731b53279dfef0498f80bc",
+  "canonicalLfBytes": 3673633,
+  "canonicalLfSha256": "6e82eb043fc07e3b3d9d7eb5935740bf5ec684ddea0c8c054d449733552a61d9",
+  "previousWindowsCrlfSha256": "bbf54a7d1bfcb2737d38b716d13d901344b6a9815b38c4610d4015d035a38629",
+  "comparison": "Byte-for-byte match after CRLF to LF conversion only. No runtime code replacement.",
+  "moduleRequirementsAtCommit": {
+    "github.com/gopherjs/gopherjs": "v1.17.2",
+    "golang.org/x/text": "v0.21.0"
+  },
+  "buildToolCaveat": "go.mod records module requirements; the installed gopherjs compiler executable version is not embedded or proven by this match."
+}

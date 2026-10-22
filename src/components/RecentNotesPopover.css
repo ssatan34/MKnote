@@ -1,0 +1,115 @@
+.recent-notes-anchor {
+  position: relative;
+  display: inline-flex;
+}
+
+.recent-notes-popover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  z-index: var(--mk-z-popover-menu);
+  min-width: 240px;
+  max-width: 340px;
+  max-height: none;
+  overflow: visible;
+  padding: 8px 0;
+  border-radius: var(--mk-radius-md);
+  border: none;
+  background: color-mix(in srgb, var(--mk-canvas) 96%, transparent);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px);
+  -webkit-app-region: no-drag;
+}
+
+.recent-notes-popover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 4px 12px 8px;
+}
+
+.recent-notes-popover-title {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mk-body-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.recent-notes-popover-empty {
+  margin: 0;
+  padding: 8px 12px 12px;
+  font-size: 12px;
+  color: var(--mk-body-muted);
+}
+
+.recent-notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recent-notes-list li {
+  min-height: 46px;
+}
+
+.recent-notes-list button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  color: var(--mk-ink);
+  text-align: left;
+  transition: background-color var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    color var(--mk-motion-fast) var(--mk-motion-ease-standard);
+}
+
+.recent-notes-list button:hover,
+.recent-notes-list button:focus-visible {
+  background: color-mix(in srgb, var(--mk-primary) 14%, var(--mk-canvas));
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.recent-notes-list button::before {
+  position: absolute;
+  top: 5px;
+  left: -8px;
+  width: 5px;
+  height: calc(100% - 10px);
+  border-radius: 5px;
+  background: var(--mk-primary);
+  content: "";
+  opacity: 0;
+  transition: opacity var(--mk-motion-fast) var(--mk-motion-ease-standard);
+}
+
+.recent-notes-list button:hover::before,
+.recent-notes-list button:focus-visible::before,
+.recent-notes-list button:active::before {
+  opacity: 1;
+}
+
+.recent-notes-item-title {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.recent-notes-item-zone {
+  font-size: 10px;
+  color: var(--mk-body-muted);
+  margin-top: 2px;
+}

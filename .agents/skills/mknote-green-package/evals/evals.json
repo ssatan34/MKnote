@@ -1,0 +1,23 @@
+{
+  "skill_name": "mknote-green-package",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请把当前 MDnote 打包成绿色版 ZIP，我要拿去测试。",
+      "expected_output": "执行仓库已有 build:green，生成新的版本化 ZIP，验证 ZIP 只含 MarkdownStickyNote.exe 和 README.txt，并报告绝对路径与 SHA-256。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "刚才打包命令超时了，帮我确认绿色包到底有没有生成；如果没有就继续打包。",
+      "expected_output": "先检查 release EXE、dist、portable 和最新 ZIP 的时间/大小，再决定是否继续构建；不能仅凭超时判定失败。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "不要改代码，只给我一个可以解压即用的 MKnote 便携测试包。",
+      "expected_output": "不修改业务代码、不清理用户产物，生成并校验只含 EXE 与 README 的绿色 ZIP。",
+      "files": []
+    }
+  ]
+}

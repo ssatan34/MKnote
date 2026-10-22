@@ -1,0 +1,30 @@
+/*
+ * UI 基础规范（与 MKnote-UI-v2 / tokens 对齐）
+ * - 排版：display 用于标题区，sans 用于正文与控件
+ * - 图标：业务界面继续用 src/components/Icon；shadcn 示例可用 lucide-react
+ */
+
+@layer components {
+  .ui-text-display {
+    font-family: var(--mk-font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .ui-text-body {
+    font-family: var(--mk-font-text);
+    font-size: 0.9375rem;
+    line-height: 1.47;
+  }
+
+  .ui-text-caption {
+    font-family: var(--mk-font-text);
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--mk-body-muted);
+  }
+
+  .ui-focus-ring {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}

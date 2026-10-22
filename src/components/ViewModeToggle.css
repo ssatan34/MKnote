@@ -1,0 +1,116 @@
+.view-mode-toggle {
+  position: relative;
+  display: inline-flex;
+  width: var(--mk-control-size-sm, 28px);
+  min-width: var(--mk-control-size-sm, 28px);
+  height: var(--mk-control-size-sm, 28px);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--mk-radius-sm, 8px);
+  background: transparent;
+  color: var(--mk-muted-icon);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  transition: background var(--mk-motion-fast) var(--mk-motion-ease-standard), color var(--mk-motion-fast) var(--mk-motion-ease-standard), transform var(--mk-motion-fast) var(--mk-motion-ease-out);
+}
+
+.view-mode-toggle:hover:not(:disabled),
+.view-mode-toggle.active {
+  background: var(--mk-control-bg-hover);
+  color: var(--mk-primary);
+}
+
+.view-mode-toggle:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+
+.view-mode-toggle:active:not(:disabled) { transform: scale(0.95); }
+.view-mode-toggle:disabled { cursor: not-allowed; opacity: 0.45; }
+
+.view-mode-toggle__svg {
+  width: 18px;
+  height: 18px;
+  overflow: visible;
+}
+
+.view-mode-toggle__eye-frame,
+.view-mode-toggle__pupil,
+.view-mode-toggle__edit-tip,
+.view-mode-toggle__edit-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.view-mode-toggle__eye-frame {
+  opacity: 1;
+  transform: scaleX(1);
+  transition: opacity 220ms ease, transform 360ms cubic-bezier(0.41, 0.64, 0.32, 1.2);
+}
+
+.view-mode-toggle__pupil {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition: opacity 180ms ease, transform 360ms cubic-bezier(0.41, 0.64, 0.32, 1.2);
+}
+
+.view-mode-toggle__edit-tip {
+  opacity: 0;
+  transform: translate(-5px, 5px) rotate(-18deg) scale(0.58);
+  transition: opacity 180ms ease, transform 380ms cubic-bezier(0.41, 0.64, 0.32, 1.2);
+}
+
+.view-mode-toggle__edit-line {
+  opacity: 0;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transition: opacity 180ms ease, stroke-dashoffset 380ms cubic-bezier(0.41, 0.64, 0.32, 1.2);
+}
+
+/* 编辑状态：显示编辑图标，使用普通 icon 色。 */
+.view-mode-toggle:not(.active) .view-mode-toggle__eye-frame { opacity: 0; transform: scaleX(0.58); }
+.view-mode-toggle:not(.active) .view-mode-toggle__pupil { opacity: 0; transform: translate(5px, -5px) scale(0.42) rotate(35deg); }
+
+/* 编辑 -> 预览：编辑线条收回，眼眶和瞳孔重新展开。 */
+.view-mode-toggle.active .view-mode-toggle__eye-frame {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.view-mode-toggle.active .view-mode-toggle__pupil {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.view-mode-toggle.active .view-mode-toggle__edit-tip {
+  opacity: 0;
+  transform: translate(-5px, 5px) rotate(-18deg) scale(0.58);
+  transition-delay: 80ms;
+}
+
+.view-mode-toggle.active .view-mode-toggle__edit-line {
+  opacity: 0;
+  stroke-dashoffset: 40;
+  transition-delay: 0ms;
+}
+
+/* 预览 -> 编辑：眼眶先收回，编辑笔尖和线条随后落回。 */
+.view-mode-toggle:not(.active) .view-mode-toggle__eye-frame { transition-delay: 0ms; }
+.view-mode-toggle:not(.active) .view-mode-toggle__pupil { transition-delay: 0ms; }
+.view-mode-toggle:not(.active) .view-mode-toggle__edit-tip { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); transition-delay: 110ms; }
+.view-mode-toggle:not(.active) .view-mode-toggle__edit-line { opacity: 1; stroke-dashoffset: 0; transition-delay: 170ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .view-mode-toggle,
+  .view-mode-toggle__eye-frame,
+  .view-mode-toggle__pupil,
+  .view-mode-toggle__edit-tip,
+  .view-mode-toggle__edit-line { transition-duration: 0.01ms; }
+}

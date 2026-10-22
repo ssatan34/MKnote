@@ -1,0 +1,37 @@
+<svg width="320" height="140" viewBox="0 0 320 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .canvas { fill: #fefcf7; }
+    .panel { fill: #faf7f0; stroke: #e2e8f0; }
+    .caption { fill: #64748b; font: 12px system-ui, sans-serif; text-anchor: middle; }
+    .pin { transform-box: fill-box; transform-origin: 50% 78%; }
+    .pin path { stroke: #475569; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .pin-open { animation: pinOpen 2.2s cubic-bezier(.41,.64,.32,1.2) infinite; }
+    .pin-closed { animation: pinClosed 2.2s cubic-bezier(.41,.64,.32,1.2) infinite; }
+    @keyframes pinOpen {
+      0%, 18% { opacity: 1; transform: translateY(-2px) rotate(-18deg) scale(1); }
+      44%, 100% { opacity: 0; transform: translateY(-7px) rotate(-24deg) scale(.86); }
+    }
+    @keyframes pinClosed {
+      0%, 34% { opacity: 0; transform: translateY(-8px) rotate(16deg) scale(.86); }
+      58% { opacity: 1; transform: translateY(1px) rotate(-3deg) scale(1.02); }
+      70%, 100% { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pin-open { opacity: 0; transform: translateY(-7px) rotate(-24deg) scale(.86); animation: none; }
+      .pin-closed { opacity: 1; transform: none; animation: none; }
+    }
+  </style>
+  <rect class="canvas" width="320" height="140" rx="12" />
+  <rect class="panel" x="110" y="12" width="100" height="100" rx="10" />
+  <svg x="132" y="34" width="56" height="56" viewBox="0 0 24 24" aria-label="窗口置顶图钉动画">
+    <g class="pin pin-open">
+      <path d="M5.34815 8.75209C6.66735 7.43284 8.23505 7.46934 9.93905 8.40379L16.31 4.87253L15.9495 2.3934L21.6063 8.05024L19.1328 7.69534L15.5959 14.0607C16.4876 15.8794 16.5669 17.3323 15.2477 18.6516C15.2477 18.6516 13.1175 16.5214 11.3586 14.7625L3.22153 20.7782L9.2191 12.623C7.4601 10.864 5.34815 8.75209 5.34815 8.75209Z" />
+    </g>
+    <g class="pin pin-closed">
+      <!-- Closed pin: Lucide v1.20.0, ISC. -->
+  <path d="M12 17v5"/>
+  <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/>
+    </g>
+  </svg>
+  <text class="caption" x="160" y="129">旋转 · 下落 · 固定</text>
+</svg>

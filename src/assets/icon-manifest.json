@@ -1,0 +1,752 @@
+[
+  {
+    "id": "logo",
+    "filename": "icons/logo.svg",
+    "title_zh": "品牌标识",
+    "priority": "P0"
+  },
+  {
+    "id": "search",
+    "filename": "icons/search.svg",
+    "title_zh": "搜索",
+    "priority": "P0"
+  },
+  {
+    "id": "font_decrease",
+    "filename": "icons/font-decrease.svg",
+    "title_zh": "减小字号",
+    "priority": "P0"
+  },
+  {
+    "id": "font_increase",
+    "filename": "icons/font-increase.svg",
+    "title_zh": "增大字号",
+    "priority": "P0"
+  },
+  {
+    "id": "preview_toggle",
+    "filename": "icons/preview-toggle.svg",
+    "title_zh": "预览切换",
+    "priority": "P0"
+  },
+  {
+    "id": "preview",
+    "filename": "icons/preview.svg",
+    "title_zh": "预览",
+    "priority": "P0"
+  },
+  {
+    "id": "eye",
+    "filename": "icons/eye.svg",
+    "title_zh": "显示密码",
+    "priority": "P0"
+  },
+  {
+    "id": "edit",
+    "filename": "icons/edit.svg",
+    "title_zh": "编辑",
+    "priority": "P0"
+  },
+  {
+    "id": "edit2",
+    "filename": "icons/edit2.svg",
+    "title_zh": "Quick Pocket 文本与输入",
+    "priority": "P0"
+  },
+  {
+    "id": "save",
+    "filename": "icons/save.svg",
+    "title_zh": "Quick Pocket 保存",
+    "priority": "P0"
+  },
+  {
+    "id": "pin_off",
+    "filename": "icons/pin-off.svg",
+    "title_zh": "取消置顶",
+    "priority": "P0"
+  },
+  {
+    "id": "pin_on",
+    "filename": "icons/pin-on.svg",
+    "title_zh": "置顶",
+    "priority": "P0"
+  },
+  {
+    "id": "theme_light",
+    "filename": "icons/theme-light.svg",
+    "title_zh": "浅色主题",
+    "priority": "P0"
+  },
+  {
+    "id": "theme_dark",
+    "filename": "icons/theme-dark.svg",
+    "title_zh": "深色主题",
+    "priority": "P0"
+  },
+  {
+    "id": "theme_system",
+    "filename": "icons/theme-system.svg",
+    "title_zh": "跟随系统",
+    "priority": "P0"
+  },
+  {
+    "id": "appearance",
+    "filename": "icons/appearance.svg",
+    "title_zh": "外观",
+    "priority": "P0"
+  },
+  {
+    "id": "Platte",
+    "filename": "icons/Platte.svg",
+    "title_zh": "外观（新）",
+    "priority": "P0"
+  },
+  {
+    "id": "close",
+    "filename": "icons/close.svg",
+    "title_zh": "关闭",
+    "priority": "P0"
+  },
+  {
+    "id": "clear4",
+    "filename": "icons/clear4.svg",
+    "title_zh": "清空",
+    "priority": "P0"
+  },
+  {
+    "id": "new_note",
+    "filename": "icons/new-note.svg",
+    "title_zh": "新建便签",
+    "priority": "P0"
+  },
+  {
+    "id": "undo",
+    "filename": "icons/undo.svg",
+    "title_zh": "撤销",
+    "priority": "P0"
+  },
+  {
+    "id": "redo",
+    "filename": "icons/redo.svg",
+    "title_zh": "重做",
+    "priority": "P0"
+  },
+  {
+    "id": "open_todo",
+    "filename": "icons/open-todo.svg",
+    "title_zh": "打开待办模板",
+    "priority": "P0"
+  },
+  {
+    "id": "bold",
+    "filename": "icons/bold.svg",
+    "title_zh": "加粗",
+    "priority": "P0"
+  },
+  {
+    "id": "italic",
+    "filename": "icons/italic.svg",
+    "title_zh": "斜体",
+    "priority": "P0"
+  },
+  {
+    "id": "strikethrough",
+    "filename": "icons/strikethrough.svg",
+    "title_zh": "删除线",
+    "priority": "P0"
+  },
+  {
+    "id": "underline",
+    "filename": "icons/underline.svg",
+    "title_zh": "下划线",
+    "priority": "P0"
+  },
+  {
+    "id": "highlight",
+    "filename": "icons/highlight.svg",
+    "title_zh": "高亮",
+    "priority": "P0"
+  },
+  {
+    "id": "case_transform",
+    "filename": "icons/case-transform.svg",
+    "title_zh": "大小写转换",
+    "priority": "P0"
+  },
+  {
+    "id": "indent",
+    "filename": "icons/indent.svg",
+    "title_zh": "增加缩进",
+    "priority": "P0"
+  },
+  {
+    "id": "outdent",
+    "filename": "icons/outdent.svg",
+    "title_zh": "减少缩进",
+    "priority": "P0"
+  },
+  {
+    "id": "task_done",
+    "filename": "icons/task-done.svg",
+    "title_zh": "完成任务",
+    "priority": "P0"
+  },
+  {
+    "id": "task_done2",
+    "filename": "icons/task-done2.svg",
+    "title_zh": "Quick Todo 已完成与清空确认",
+    "priority": "P0"
+  },
+  {
+    "id": "check2",
+    "filename": "icons/check2.svg",
+    "title_zh": "Quick Todo 未完成",
+    "priority": "P0"
+  },
+  {
+    "id": "done3",
+    "filename": "icons/done3.svg",
+    "title_zh": "Quick Todo 已完成",
+    "priority": "P0"
+  },
+  {
+    "id": "pills",
+    "filename": "icons/pills.svg",
+    "title_zh": "胶囊待办",
+    "priority": "P0"
+  },
+  {
+    "id": "h1",
+    "filename": "icons/h1.svg",
+    "title_zh": "一级标题",
+    "priority": "P0"
+  },
+  {
+    "id": "h2",
+    "filename": "icons/h2.svg",
+    "title_zh": "二级标题",
+    "priority": "P0"
+  },
+  {
+    "id": "h3",
+    "filename": "icons/h3.svg",
+    "title_zh": "三级标题",
+    "priority": "P0"
+  },
+  {
+    "id": "ul",
+    "filename": "icons/ul.svg",
+    "title_zh": "无序列表",
+    "priority": "P0"
+  },
+  {
+    "id": "ol",
+    "filename": "icons/ol.svg",
+    "title_zh": "有序列表",
+    "priority": "P0"
+  },
+  {
+    "id": "blockquote",
+    "filename": "icons/blockquote.svg",
+    "title_zh": "引用块",
+    "priority": "P0"
+  },
+  {
+    "id": "inline_code",
+    "filename": "icons/inline-code.svg",
+    "title_zh": "行内代码",
+    "priority": "P0"
+  },
+  {
+    "id": "code_block",
+    "filename": "icons/code-block.svg",
+    "title_zh": "代码块",
+    "priority": "P0"
+  },
+  {
+    "id": "link",
+    "filename": "icons/link.svg",
+    "title_zh": "链接",
+    "priority": "P0"
+  },
+  {
+    "id": "image",
+    "filename": "icons/image.svg",
+    "title_zh": "图片",
+    "priority": "P0"
+  },
+  {
+    "id": "table",
+    "filename": "icons/table.svg",
+    "title_zh": "表格",
+    "priority": "P0"
+  },
+  {
+    "id": "hr",
+    "filename": "icons/hr.svg",
+    "title_zh": "分割线",
+    "priority": "P0"
+  },
+  {
+    "id": "task",
+    "filename": "icons/task.svg",
+    "title_zh": "任务行",
+    "priority": "P0"
+  },
+  {
+    "id": "clear_format",
+    "filename": "icons/clear-format.svg",
+    "title_zh": "清除格式",
+    "priority": "P0"
+  },
+  {
+    "id": "library",
+    "filename": "icons/library.svg",
+    "title_zh": "资料库",
+    "priority": "P0"
+  },
+  {
+    "id": "sync",
+    "filename": "icons/sync.svg",
+    "title_zh": "同步",
+    "priority": "P0"
+  },
+  {
+    "id": "autostart",
+    "filename": "icons/autostart.svg",
+    "title_zh": "开机启动",
+    "priority": "P0"
+  },
+  {
+    "id": "hotkey",
+    "filename": "icons/hotkey.svg",
+    "title_zh": "快捷键",
+    "priority": "P0"
+  },
+  {
+    "id": "new_folder",
+    "filename": "icons/new-folder.svg",
+    "title_zh": "新建文件夹",
+    "priority": "P0"
+  },
+  {
+    "id": "new_note_in_folder",
+    "filename": "icons/new-note-in-folder.svg",
+    "title_zh": "文件夹中新建便签",
+    "priority": "P0"
+  },
+  {
+    "id": "clear",
+    "filename": "icons/clear.svg",
+    "title_zh": "清空",
+    "priority": "P0"
+  },
+  {
+    "id": "confirm",
+    "filename": "icons/confirm.svg",
+    "title_zh": "确认",
+    "priority": "P0"
+  },
+  {
+    "id": "delete",
+    "filename": "icons/delete.svg",
+    "title_zh": "删除",
+    "priority": "P0"
+  },
+  {
+    "id": "copy_code",
+    "filename": "icons/copy-code.svg",
+    "title_zh": "复制代码",
+    "priority": "P0"
+  },
+  {
+    "id": "code_expand",
+    "filename": "icons/code-expand.svg",
+    "title_zh": "展开代码",
+    "priority": "P0"
+  },
+  {
+    "id": "code_collapse",
+    "filename": "icons/code-collapse.svg",
+    "title_zh": "收起代码",
+    "priority": "P0"
+  },
+  {
+    "id": "drag_handle",
+    "filename": "icons/drag-handle.svg",
+    "title_zh": "拖拽手柄",
+    "priority": "P0"
+  },
+  {
+    "id": "checkbox_unchecked",
+    "filename": "icons/checkbox-unchecked.svg",
+    "title_zh": "未选复选框",
+    "priority": "P0"
+  },
+  {
+    "id": "checkbox_checked",
+    "filename": "icons/checkbox-checked.svg",
+    "title_zh": "已选复选框",
+    "priority": "P0"
+  },
+  {
+    "id": "add_subtask",
+    "filename": "icons/add-subtask.svg",
+    "title_zh": "添加子任务",
+    "priority": "P0"
+  },
+  {
+    "id": "alarm_clock",
+    "filename": "icons/alarm-clock.svg",
+    "title_zh": "定时提醒",
+    "priority": "P0"
+  },
+  {
+    "id": "dismiss",
+    "filename": "icons/dismiss.svg",
+    "title_zh": "关闭提示",
+    "priority": "P0"
+  },
+  {
+    "id": "zone_inbox",
+    "filename": "icons/zone-inbox.svg",
+    "title_zh": "收件箱区域",
+    "priority": "P1"
+  },
+  {
+    "id": "zone_default",
+    "filename": "icons/zone-default.svg",
+    "title_zh": "默认区域",
+    "priority": "P1"
+  },
+  {
+    "id": "pick_folder",
+    "filename": "icons/pick-folder.svg",
+    "title_zh": "选择文件夹",
+    "priority": "P1"
+  },
+  {
+    "id": "pick_folder2",
+    "filename": "icons/pick-folder2.svg",
+    "title_zh": "Quick Pocket 路径标签",
+    "priority": "P0"
+  },
+  {
+    "id": "rename",
+    "filename": "icons/rename.svg",
+    "title_zh": "重命名",
+    "priority": "P1"
+  },
+  {
+    "id": "sync_manual",
+    "filename": "icons/sync-manual.svg",
+    "title_zh": "手动同步",
+    "priority": "P1"
+  },
+  {
+    "id": "sync_settings",
+    "filename": "icons/sync-settings.svg",
+    "title_zh": "同步设置",
+    "priority": "P1"
+  },
+  {
+    "id": "collapse",
+    "filename": "icons/collapse.svg",
+    "title_zh": "折叠",
+    "priority": "P1"
+  },
+  {
+    "id": "open_containing_folder",
+    "filename": "icons/open-containing-folder.svg",
+    "title_zh": "打开所在文件夹",
+    "priority": "P0"
+  },
+  {
+    "id": "close_other_tabs",
+    "filename": "icons/close-other-tabs.svg",
+    "title_zh": "关闭其他标签",
+    "priority": "P0"
+  },
+  {
+    "id": "tab_chevron_left",
+    "filename": "icons/tab-chevron-left.svg",
+    "title_zh": "标签向左滚动",
+    "priority": "P0"
+  },
+  {
+    "id": "tab_chevron_right",
+    "filename": "icons/tab-chevron-right.svg",
+    "title_zh": "标签向右滚动",
+    "priority": "P0"
+  },
+  {
+    "id": "search_all",
+    "filename": "icons/search-all.svg",
+    "title_zh": "全文搜索",
+    "priority": "P0"
+  },
+  {
+    "id": "recent_notes",
+    "filename": "icons/recent-notes.svg",
+    "title_zh": "最近打开",
+    "priority": "P0"
+  },
+  {
+    "id": "archive",
+    "filename": "icons/archive.svg",
+    "title_zh": "归档",
+    "priority": "P0"
+  },
+  {
+    "id": "template",
+    "filename": "icons/template.svg",
+    "title_zh": "模板",
+    "priority": "P0"
+  },
+  {
+    "id": "lock_open",
+    "filename": "icons/lock-open.svg",
+    "title_zh": "未置顶",
+    "priority": "P0"
+  },
+  {
+    "id": "lock_closed",
+    "filename": "icons/lock-closed.svg",
+    "title_zh": "已置顶",
+    "priority": "P0"
+  },
+  {
+    "id": "ai_assist",
+    "filename": "icons/ai-assist.svg",
+    "title_zh": "AI 助手",
+    "priority": "P0"
+  },
+  {
+    "id": "ai",
+    "filename": "icons/ai.svg",
+    "title_zh": "AI 配置",
+    "priority": "P0"
+  },
+  {
+    "id": "recycle_bin",
+    "filename": "icons/recycle-bin.svg",
+    "title_zh": "回收站",
+    "priority": "P0"
+  },
+  {
+    "id": "highlight2",
+    "filename": "icons/highlight2.svg",
+    "title_zh": "自定义颜色标签",
+    "priority": "P0"
+  },
+  {
+    "id": "s3",
+    "filename": "icons/s3.svg",
+    "title_zh": "短消息 S3 设置",
+    "priority": "P0"
+  },
+  {
+    "id": "lock_open2",
+    "filename": "icons/lock-open2.svg",
+    "title_zh": "置顶标签（未置顶）",
+    "priority": "P0"
+  },
+  {
+    "id": "lock_closed2",
+    "filename": "icons/lock-closed2.svg",
+    "title_zh": "置顶标签（已置顶）",
+    "priority": "P0"
+  },
+  {
+    "id": "window_pin_open",
+    "filename": "icons/window-pin-open.svg",
+    "title_zh": "窗口置顶（未置顶）",
+    "priority": "P0"
+  },
+  {
+    "id": "window_pin_closed",
+    "filename": "icons/window-pin-closed.svg",
+    "title_zh": "窗口置顶（已置顶）",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_lock_closed2",
+    "filename": "icons/quick-lock-closed2.svg",
+    "title_zh": "Quick Pocket 与 Quick Todo 锁定、隐私",
+    "priority": "P0"
+  },
+  {
+    "id": "default_note",
+    "filename": "icons/default-note.svg",
+    "title_zh": "默认便签",
+    "priority": "P0"
+  },
+  {
+    "id": "template_meeting",
+    "filename": "icons/template-meeting.svg",
+    "title_zh": "模板：会议记录",
+    "priority": "P1"
+  },
+  {
+    "id": "template_today",
+    "filename": "icons/template-today.svg",
+    "title_zh": "模板：今日工作",
+    "priority": "P1"
+  },
+  {
+    "id": "template_comms",
+    "filename": "icons/template-comms.svg",
+    "title_zh": "模板：沟通记录",
+    "priority": "P1"
+  },
+  {
+    "id": "template_shopping",
+    "filename": "icons/template-shopping.svg",
+    "title_zh": "模板：购物清单",
+    "priority": "P1"
+  },
+  {
+    "id": "template_travel",
+    "filename": "icons/template-travel.svg",
+    "title_zh": "模板：旅行准备",
+    "priority": "P1"
+  },
+  {
+    "id": "template_reading",
+    "filename": "icons/template-reading.svg",
+    "title_zh": "模板：阅读摘录",
+    "priority": "P1"
+  },
+  {
+    "id": "template_stash",
+    "filename": "icons/template-stash.svg",
+    "title_zh": "模板：资料暂存",
+    "priority": "P1"
+  },
+  {
+    "id": "template_concept",
+    "filename": "icons/template-concept.svg",
+    "title_zh": "模板：概念卡片",
+    "priority": "P1"
+  },
+  {
+    "id": "image_resize",
+    "filename": "icons/image-resize.svg",
+    "title_zh": "调整图片大小",
+    "priority": "P1"
+  },
+  {
+    "id": "timeline",
+    "filename": "icons/timeline.svg",
+    "title_zh": "时间轴",
+    "priority": "P0"
+  },
+  {
+    "id": "run_script",
+    "filename": "icons/run-script.svg",
+    "title_zh": "运行脚本",
+    "priority": "P0"
+  },
+  {
+    "id": "run_script2",
+    "filename": "icons/run-script2.svg",
+    "title_zh": "Quick Pocket 命令或代码标签",
+    "priority": "P0"
+  },
+  {
+    "id": "tag",
+    "filename": "icons/tag.svg",
+    "title_zh": "标签",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_todo_important",
+    "filename": "icons/quick-todo-important.svg",
+    "title_zh": "Quick Todo 重要",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_todo_waiting",
+    "filename": "icons/quick-todo-waiting.svg",
+    "title_zh": "Quick Todo 等待",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_todo_next",
+    "filename": "icons/quick-todo-next.svg",
+    "title_zh": "Quick Todo 下一步",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_todo_idea",
+    "filename": "icons/quick-todo-idea.svg",
+    "title_zh": "Quick Todo 想法",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_todo_urgent",
+    "filename": "icons/quick-todo-urgent.svg",
+    "title_zh": "Quick Todo 紧急",
+    "priority": "P0"
+  },
+  {
+    "id": "quick_todo_important_urgent",
+    "filename": "icons/quick-todo-important-urgent.svg",
+    "title_zh": "Quick Todo 重要紧急",
+    "priority": "P0"
+  },
+  {
+    "id": "insert_table_row",
+    "filename": "icons/insert-table-row.svg",
+    "title_zh": "添加表格行",
+    "priority": "P0"
+  },
+  {
+    "id": "delete_table_row",
+    "filename": "icons/delete-table-row.svg",
+    "title_zh": "删去表格行",
+    "priority": "P0"
+  },
+  {
+    "id": "insert_table_column",
+    "filename": "icons/insert-table-column.svg",
+    "title_zh": "添加表格列",
+    "priority": "P0"
+  },
+  {
+    "id": "delete_table_column",
+    "filename": "icons/delete-table-column.svg",
+    "title_zh": "删去表格列",
+    "priority": "P0"
+  },
+  {
+    "id": "align_left",
+    "filename": "icons/align-left.svg",
+    "title_zh": "表格居左",
+    "priority": "P0"
+  },
+  {
+    "id": "align_center",
+    "filename": "icons/align-center.svg",
+    "title_zh": "表格居中",
+    "priority": "P0"
+  },
+  {
+    "id": "align_right",
+    "filename": "icons/align-right.svg",
+    "title_zh": "表格居右",
+    "priority": "P0"
+  },
+  {
+    "id": "open_lab",
+    "filename": "icons/open-lab.svg",
+    "title_zh": "在主界面 Lab 打开",
+    "priority": "P0"
+  },
+  {
+    "id": "open_sticky",
+    "filename": "icons/open-sticky.svg",
+    "title_zh": "以便签模式打开",
+    "priority": "P0"
+  }
+]

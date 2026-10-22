@@ -1,0 +1,91 @@
+.full-search-toggle {
+  position: relative;
+  display: inline-flex;
+  width: var(--mk-control-size-sm, 28px);
+  min-width: var(--mk-control-size-sm, 28px);
+  height: var(--mk-control-size-sm, 28px);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--mk-radius-sm, 8px);
+  background: transparent;
+  color: var(--mk-muted-icon);
+  cursor: pointer;
+  -webkit-app-region: no-drag;
+  transition:
+    background var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    color var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    transform var(--mk-motion-fast) var(--mk-motion-ease-out);
+}
+
+.full-search-toggle:hover,
+.full-search-toggle.active {
+  background: var(--mk-control-bg-hover);
+  color: var(--mk-primary);
+}
+
+.full-search-toggle:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+
+.full-search-toggle:active {
+  transform: scale(0.95);
+}
+
+.full-search-toggle > .mk-icon,
+.full-search-toggle__target {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
+.full-search-toggle > .mk-icon {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 220ms var(--mk-motion-ease-standard), transform 300ms var(--mk-motion-ease-out);
+}
+
+.full-search-toggle__target {
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transform: translate(2px, 2px) scale(0.62);
+  transform-origin: 12.5px 15px;
+  transition: opacity 220ms var(--mk-motion-ease-standard), transform 360ms var(--mk-motion-ease-out);
+}
+
+.full-search-toggle__lens {
+  transform-box: view-box;
+  transform-origin: 12.5px 15px;
+  transform: translate(3.5px, 3.5px) scale(0.58);
+  transition: transform 360ms var(--mk-motion-ease-out);
+}
+
+.full-search-toggle.active > .mk-icon {
+  opacity: 0;
+  transform: scale(0.72);
+}
+
+.full-search-toggle.active .full-search-toggle__target {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.full-search-toggle.active .full-search-toggle__lens {
+  transform: translate(0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .full-search-toggle,
+  .full-search-toggle > .mk-icon,
+  .full-search-toggle__target,
+  .full-search-toggle__lens {
+    transition-duration: 0.01ms;
+  }
+}

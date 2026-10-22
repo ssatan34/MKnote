@@ -1,0 +1,69 @@
+.mk-close-button {
+  --mk-close-accent: var(--mk-primary);
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--mk-radius-sm, 8px);
+  background: transparent;
+  color: var(--mk-icon);
+  cursor: pointer;
+  transition: border-color 300ms ease, color 300ms ease;
+}
+
+button.mk-close-button.mk-close-button--compact { width: 28px; min-width: 28px; height: 28px; }
+button.mk-close-button.mk-close-button--standard { width: 32px; min-width: 32px; height: 32px; }
+button.mk-close-button:hover { border-color: var(--mk-close-accent); background: transparent; color: var(--mk-icon); }
+button.mk-close-button:focus-visible { outline: 2px solid var(--mk-primary-focus); outline-offset: 3px; }
+button.mk-close-button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+.mk-close-button__label {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mk-font-text, inherit);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 300ms ease;
+}
+
+.mk-close-button--standard .mk-close-button__label { font-size: 1.7rem; }
+.mk-close-button:hover .mk-close-button__label,
+.mk-close-button:focus-visible .mk-close-button__label { transform: scale(0); }
+
+.mk-close-button__bar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: var(--mk-close-accent);
+  transform: rotate(45deg);
+  transition: opacity 120ms ease, top 300ms ease, right 300ms ease, bottom 300ms ease, left 300ms ease;
+}
+
+.mk-close-button__bar--top { top: 100%; left: 0; }
+.mk-close-button__bar--left { top: 0; left: 100%; }
+.mk-close-button__bar--right { top: 0; right: 100%; }
+.mk-close-button__bar--bottom { right: 0; bottom: 100%; }
+
+.mk-close-button:hover .mk-close-button__bar--top,
+.mk-close-button:focus-visible .mk-close-button__bar--top { top: 75%; opacity: 1; }
+.mk-close-button:hover .mk-close-button__bar--left,
+.mk-close-button:focus-visible .mk-close-button__bar--left { left: 75%; opacity: 1; }
+.mk-close-button:hover .mk-close-button__bar--right,
+.mk-close-button:focus-visible .mk-close-button__bar--right { right: 75%; opacity: 1; }
+.mk-close-button:hover .mk-close-button__bar--bottom,
+.mk-close-button:focus-visible .mk-close-button__bar--bottom { bottom: 75%; opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-close-button, .mk-close-button__label, .mk-close-button__bar { transition-duration: 0.01ms; }
+}

@@ -1,0 +1,727 @@
+.note-tabs-bar {
+  --note-tab-row-height: 32px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  min-height: var(--note-tab-row-height);
+  border-bottom: 1px solid var(--mk-hairline);
+  background: var(--mk-parchment);
+  -webkit-app-region: no-drag;
+}
+
+.note-tabs-bar[data-two-rows="true"] {
+  min-height: calc(var(--note-tab-row-height) * 2 + 4px);
+}
+
+.note-tabs-bar[data-two-rows="true"] .note-tabs-new-lead,
+.note-tabs-bar[data-two-rows="true"] .note-tabs-capsule-todo-lead,
+.note-tabs-bar[data-two-rows="true"] .note-tabs-overflow-wrap,
+.note-tabs-bar[data-two-rows="true"] .note-tabs-actions {
+  align-self: center;
+}
+
+.note-tabs-new-lead {
+  --plus-side-length: 1.25rem;
+  --plus-top-right-triangle-side-length: 0.45rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: center;
+  margin: 0 0 0 calc((40px - var(--plus-side-length)) / 2);
+  width: var(--plus-side-length);
+  height: var(--plus-side-length);
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: var(--mk-parchment);
+  overflow: hidden;
+  color: var(--mk-primary);
+}
+
+.note-tabs-new-lead::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus-top-right-triangle-side-length) var(--plus-top-right-triangle-side-length) 0;
+  border-style: solid;
+  border-color: transparent var(--mk-primary) transparent transparent;
+  transition: border-width 200ms ease-in-out;
+}
+
+.note-tabs-new-lead:hover {
+  cursor: pointer;
+}
+
+.note-tabs-new-lead:hover::before,
+.note-tabs-new-lead:focus-visible::before {
+  --plus-top-right-triangle-side-length: calc(var(--plus-side-length) * 2);
+}
+
+.note-tabs-new-lead .plusIcon {
+  position: relative;
+  z-index: 1;
+  height: calc(var(--plus-side-length) * 0.7875);
+  width: calc(var(--plus-side-length) * 0.7875);
+  fill: var(--mk-primary);
+  stroke: var(--mk-primary);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+  transition:
+    fill 200ms ease-in-out,
+    transform 200ms ease-in-out;
+}
+
+.note-tabs-new-lead:hover .plusIcon,
+.note-tabs-new-lead:focus-visible .plusIcon {
+  fill: var(--mk-ink);
+  stroke: var(--mk-ink);
+  transform: rotate(180deg);
+}
+
+.note-tabs-new-lead:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+.note-tabs-capsule-todo-lead {
+  flex-shrink: 0;
+  align-self: center;
+  margin: 0 2px 0 0;
+  border-right: 1px solid var(--mk-hairline);
+  border-radius: 0;
+  padding-right: 6px;
+  color: var(--mk-icon);
+}
+.note-tabs-capsule-todo-lead:hover {
+  color: var(--mk-ink);
+}
+
+.note-tabs-pinned {
+  position: relative;
+  flex-shrink: 0;
+  /* 固定两列 grid，tab 自动撑满列宽 */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: var(--note-tab-row-height);
+  align-content: flex-start;
+  gap: 2px;
+  /* 宽度：固定，让两个 tab 均分 */
+  width: min(42%, 180px);
+  max-width: 180px;
+  padding: 4px 2px 0 4px;
+  border-right: 1px solid var(--mk-hairline);
+  background: var(--mk-parchment);
+}
+
+/* 只有1个置顶 tab 时，让它横跨两列 */
+.note-tabs-pinned:has(.note-tab.pinned:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.note-tabs-bar[data-two-rows="true"] .note-tabs-pinned {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: var(--note-tab-row-height);
+  width: 180px;
+  max-width: 180px;
+  min-width: 180px;
+  align-self: stretch;
+  align-content: flex-start;
+}
+
+.note-tabs-bar[data-two-rows="true"] .note-tab.pinned {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+.note-tabs-bar[data-two-rows="true"] .note-tab.pinned.active {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+.note-tab.pinned {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  padding-inline: 7px;
+  background: color-mix(in srgb, var(--mk-primary) 6%, transparent);
+}
+
+.note-tab.pinned.active {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  background: var(--mk-canvas, var(--mk-parchment));
+}
+
+/* hover 時 pin icon 變高亮色 */
+.note-tab.pinned:hover .note-tab-pin-icon,
+.note-tab.pinned.active .note-tab-pin-icon {
+  opacity: 1;
+  color: var(--mk-primary);
+}
+
+.note-tabs-scroll-outer {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.note-tabs-scroll-outer[data-fade-left="true"]::before,
+.note-tabs-scroll-outer[data-fade-right="true"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 18px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.note-tabs-scroll-outer[data-fade-left="true"]::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--mk-parchment) 88%, var(--mk-canvas)),
+    transparent
+  );
+}
+
+.note-tabs-scroll-outer[data-fade-right="true"]::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    color-mix(in srgb, var(--mk-parchment) 88%, var(--mk-canvas)),
+    transparent
+  );
+}
+
+.note-tabs-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: stretch;
+  gap: 2px;
+  min-width: 0;
+  max-height: calc(var(--note-tab-row-height) * 2 + 4px);
+  padding: 4px 4px 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Firefox — 使用 mk-scroll token */
+  scrollbar-width: thin;
+  scrollbar-color: var(--mk-scrollbar) transparent;
+}
+
+.note-tabs-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.note-tabs-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.note-tabs-scroll::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+  background: var(--mk-scrollbar);
+  transition: background 150ms ease-out;
+}
+
+.note-tabs-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--mk-scrollbar-hover);
+}
+
+.note-tab {
+  flex-shrink: 0;
+  max-width: none;
+  height: var(--note-tab-row-height);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 18px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: color-mix(in srgb, var(--mk-ink) 6%, var(--mk-parchment));
+  color: var(--mk-ink);
+  font-size: 0.9em;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  touch-action: none;
+  user-select: none;
+  transition: none;
+}
+
+.note-tab:hover:not(.active) {
+  transition: background 100ms ease-out, color 100ms ease-out;
+}
+
+.note-tab.active {
+  max-width: none;
+  color: var(--mk-ink);
+  background: var(--mk-canvas, var(--mk-parchment));
+  border-bottom: 2px solid var(--mk-primary);
+  box-shadow: none;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.note-tab:hover {
+  color: var(--mk-ink);
+  background: color-mix(in srgb, var(--mk-ink) 12%, var(--mk-parchment));
+  transform: none;
+}
+
+.note-tab.dragging {
+  opacity: 1;
+  cursor: grabbing;
+  z-index: 3;
+  position: relative;
+  pointer-events: none;
+  transition: none;
+}
+
+.note-tab.dragging.drag-outside {
+  opacity: 0;
+}
+
+.note-tab-native-preview {
+  box-sizing: border-box;
+  opacity: 1;
+  pointer-events: none;
+  cursor: grabbing;
+  margin: 0;
+  transform: none;
+  transition: none;
+}
+
+.note-tab-label {
+  flex: 0 0 auto;
+  display: block;
+  min-width: 0;
+  max-width: 9ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note-tab-pin-icon {
+  flex-shrink: 0;
+  opacity: 0.55;
+  color: var(--mk-muted);
+  transition: color 120ms ease, opacity 120ms ease;
+}
+
+.note-tabs-overflow-wrap {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+  border-left: 1px solid var(--mk-hairline);
+}
+
+.note-tabs-overflow-wrap.has-slot {
+  width: 56px;
+  min-width: 56px;
+}
+
+.note-tabs-overflow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-sm);
+  background: color-mix(in srgb, var(--mk-ink) 4%, transparent);
+  color: var(--mk-muted);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.note-tabs-overflow-btn:hover,
+.note-tabs-overflow-btn.open {
+  color: var(--mk-ink);
+  background: color-mix(in srgb, var(--mk-primary) 10%, transparent);
+  border-color: color-mix(in srgb, var(--mk-primary) 35%, var(--mk-hairline));
+}
+
+.note-tabs-overflow-chevron {
+  transform: rotate(90deg);
+  opacity: 0.8;
+}
+
+.note-tabs-overflow-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: var(--mk-z-popover-menu);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 160px;
+  max-width: min(280px, calc(100vw - 48px));
+  max-height: min(320px, 40vh);
+  padding: 6px;
+  overflow: auto;
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-md);
+  background: color-mix(in srgb, var(--mk-canvas) 96%, transparent);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(16px);
+  animation: mk-popover-in var(--mk-motion-panel) var(--mk-motion-ease-out);
+  transform-origin: top right;
+}
+
+.note-tabs-overflow-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px 8px;
+  border: none;
+  border-radius: var(--mk-radius-sm);
+  background: transparent;
+  color: var(--mk-ink);
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.note-tabs-overflow-item:hover {
+  background: color-mix(in srgb, var(--mk-primary) 10%, transparent);
+}
+
+.note-tabs-overflow-item.active {
+  background: color-mix(in srgb, var(--mk-primary) 14%, transparent);
+  font-weight: 600;
+}
+
+.note-tabs-actions {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 4px;
+  border-left: 1px solid var(--mk-hairline);
+}
+
+.note-tabs-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: var(--mk-radius-sm);
+  background: transparent;
+  color: var(--mk-icon);
+  cursor: pointer;
+}
+
+.note-tabs-action-btn:hover:not(:disabled) {
+  color: var(--mk-ink);
+  background: color-mix(in srgb, var(--mk-primary) 12%, transparent);
+}
+
+.note-tabs-action-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.note-tabs-close-others-btn {
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.note-tabs-close-others-btn .mk-icon svg {
+  overflow: visible;
+}
+
+.note-tabs-close-others-btn .mk-icon svg path {
+  transition: opacity 180ms ease, transform 180ms ease;
+  transform-origin: 12px 12px;
+}
+
+.note-tabs-close-others-btn:hover:not(:disabled) {
+  color: var(--mk-primary);
+}
+
+.note-tabs-close-others-btn:hover:not(:disabled) .mk-icon svg path:first-child {
+  opacity: 0;
+  transform: scale(0.55) rotate(45deg);
+}
+
+.note-tabs-measure {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 2px;
+  padding: 4px 4px 0;
+}
+
+.note-tabs-popover-anchor {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 0;
+}
+
+.tab-close-pinned-popover {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 6px);
+  transform: translateX(-50%);
+  width: min(280px, calc(100vw - 48px));
+  z-index: var(--mk-z-popover-menu);
+}
+
+.note-tabs-pinned .tab-close-pinned-popover {
+  left: 0;
+  transform: none;
+}
+
+/* Regular tabs stay in one horizontal row. */
+.note-tabs-bar {
+  z-index: 2;
+  min-height: var(--note-tab-row-height);
+}
+
+.note-tabs-scroll-outer {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 24px;
+  align-items: stretch;
+}
+
+.note-tabs-scroll-outer[data-fade-left="true"]::before {
+  left: 24px;
+}
+
+.note-tabs-scroll-outer[data-fade-right="true"]::after {
+  right: 24px;
+}
+
+.note-tabs-scroll {
+  flex-wrap: nowrap;
+  align-content: stretch;
+  height: var(--note-tab-row-height);
+  max-height: var(--note-tab-row-height);
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.note-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.note-tabs-scroll-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--mk-muted);
+  cursor: pointer;
+}
+
+.note-tabs-scroll-btn:hover:not(:disabled) {
+  color: var(--mk-ink);
+  background: color-mix(in srgb, var(--mk-primary) 8%, transparent);
+}
+
+.note-tabs-scroll-btn:disabled {
+  opacity: 0.18;
+  cursor: default;
+}
+
+.note-tab {
+  flex: 0 0 auto;
+  max-width: none;
+}
+
+.note-tab.active {
+  max-width: none;
+}
+
+.note-tabs-capsule-todo-btn {
+  color: var(--mk-icon);
+  transition: transform 300ms ease, color 200ms ease;
+}
+
+.note-tabs-capsule-todo-btn:hover:not(:disabled) {
+  color: var(--mk-primary);
+  transform: rotate(90deg);
+}
+
+.note-tabs-capsule-todo-btn:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+
+.note-tabs-capsule-todo-icon {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 200ms ease;
+}
+
+.note-tabs-pinned-host {
+  flex-shrink: 0;
+  min-width: 0;
+  margin-inline-start: var(--mk-editor-toolbar-width);
+}
+
+.note-tabs-pinned-dock {
+  --note-tab-row-height: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  height: 34px;
+  padding: 3px 8px 3px 0;
+  box-sizing: border-box;
+  border-top: 1px solid var(--mk-hairline);
+  background: var(--mk-parchment);
+  -webkit-app-region: no-drag;
+}
+
+.note-tabs-pinned-dock[data-pinned-active="true"] {
+  border-top: 1px solid color-mix(in srgb, var(--mk-primary) 45%, var(--mk-hairline));
+  background: color-mix(in srgb, var(--mk-primary) 12%, var(--mk-parchment));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--mk-primary) 12%, transparent);
+}
+
+.note-tabs-pinned-track {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Include .pinned so legacy .note-tab.pinned.active cannot change width constraints. */
+.note-tabs-pinned-dock .note-tab.pinned {
+  box-sizing: border-box;
+  flex: 0 0 max-content;
+  width: max-content;
+  max-width: 220px;
+  min-width: 56px;
+  padding: 0 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--mk-primary) 28%, var(--mk-hairline));
+  background: color-mix(in srgb, var(--mk-primary) 6%, var(--mk-canvas));
+  box-shadow: 0 1px 1px color-mix(in srgb, var(--mk-ink) 5%, transparent);
+}
+
+.note-tabs-pinned-dock .note-tab-label {
+  flex: 1 1 auto;
+  max-width: none;
+}
+
+.note-tabs-pinned-dock .note-tab.active {
+  background: color-mix(in srgb, var(--mk-primary) 24%, var(--mk-canvas));
+  border-color: var(--mk-primary);
+  box-shadow: inset 0 -2px 0 var(--mk-primary);
+  color: var(--mk-primary);
+}
+
+.note-tabs-pinned-dock .note-tab:hover:not(.active) {
+  background: color-mix(in srgb, var(--mk-primary) 16%, var(--mk-canvas));
+  border-color: color-mix(in srgb, var(--mk-primary) 65%, var(--mk-hairline));
+}
+
+.note-tabs-pinned-dock .note-tab:focus-visible,
+.note-tabs-pinned-more-btn:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: -2px;
+}
+
+.note-tabs-pinned-more {
+  position: relative;
+  flex: 0 0 72px;
+  margin-left: auto;
+}
+
+.note-tabs-pinned-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 72px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--mk-primary) 28%, var(--mk-hairline));
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--mk-primary) 6%, var(--mk-canvas));
+  color: var(--mk-muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.note-tabs-pinned-more-btn:hover,
+.note-tabs-pinned-more-btn[aria-expanded="true"] {
+  color: var(--mk-primary);
+  background: color-mix(in srgb, var(--mk-primary) 8%, var(--mk-parchment));
+}
+
+.note-tabs-pinned-more-btn .mk-icon {
+  transform: rotate(-90deg);
+}
+
+.note-tabs-pinned-menu {
+  top: auto;
+  bottom: calc(100% + 6px);
+  transform-origin: bottom right;
+  max-width: min(360px, calc(100vw - 24px));
+}
+
+.note-tabs-pinned-menu .note-tabs-overflow-item {
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+.note-tabs-pinned-measure {
+  position: absolute;
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: max-content;
+  gap: 4px;
+}
+
+.note-tabs-pinned-dock .tab-close-pinned-popover {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: calc(100% + 6px);
+  transform: none;
+}

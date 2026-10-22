@@ -1,0 +1,82 @@
+.quick-todo-reminder-shell {
+  min-height: 100vh;
+  color: var(--mk-ink);
+  background: var(--mk-canvas);
+}
+
+.quick-todo-reminder-card {
+  box-sizing: border-box;
+  min-height: 188px;
+  padding: 12px;
+  border: 1px solid var(--mk-hairline);
+  border-radius: 10px;
+  background: var(--mk-canvas);
+}
+
+.quick-todo-reminder-header,
+.quick-todo-reminder-header span,
+.quick-todo-reminder-actions {
+  display: flex;
+  align-items: center;
+}
+
+.quick-todo-reminder-header {
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--mk-primary);
+  font-size: 12px;
+}
+
+.quick-todo-reminder-header span { gap: 6px; }
+
+.quick-todo-reminder-item {
+  overflow: hidden;
+  margin: 0 0 9px;
+  color: var(--mk-muted);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quick-todo-reminder-card label {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  color: var(--mk-muted);
+  font-size: 11px;
+}
+
+.quick-todo-reminder-card input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 29px;
+  padding: 3px 5px;
+  border: 1px solid var(--mk-hairline);
+  border-radius: 6px;
+  color: var(--mk-ink);
+  background: var(--mk-canvas);
+  font: inherit;
+}
+
+.quick-todo-reminder-actions {
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.quick-todo-reminder-actions button {
+  min-height: 26px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--mk-primary);
+  font-size: 11px;
+}
+
+.quick-todo-reminder-error,
+.quick-todo-reminder-empty {
+  margin: 8px 0 0;
+  color: var(--mk-primary);
+  font-size: 11px;
+}

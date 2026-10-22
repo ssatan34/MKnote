@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 2,
+  "manifestStatus": "owner-approved",
+  "ownerApproval": {
+    "status": "approved",
+    "approvedBy": "project-owner",
+    "approvedAt": "2026-08-22"
+  },
+  "defaultContract": {
+    "normalizationAllowed": false,
+    "allowedCanonicalChanges": [],
+    "untouchedRegionContract": "打开、切换、保存以及编辑其他块时，未触碰文档或块必须 byte-equal；禁止全局 serializer canonicalization。",
+    "unapprovedHandling": "未被 approvedContracts 明确列出的格式变化必须保留原文，或进入 source-aware/raw/safe-source 路径；不得静默删除、转义或重排。"
+  },
+  "approvedContracts": {
+    "table": {
+      "structureClassification": "native",
+      "canonicalizationScope": "edited-table-block-only",
+      "allowedCanonicalChanges": [
+        "cell-padding",
+        "column-width",
+        "alignment-separator",
+        "pipe-escaping"
+      ]
+    },
+    "heading": {
+      "existingSetext": "preserve",
+      "newHeading": "atx",
+      "explicitLevelOrStyleChange": "allowed",
+      "automaticSetextToAtx": false
+    },
+    "image": {
+      "nodeAttributes": [
+        "src",
+        "alt",
+        "title",
+        "sourceKind",
+        "localRel",
+        "originalLocalRel",
+        "hostedUrl",
+        "width",
+        "doodledUrl"
+      ],
+      "canonicalizationScope": "edited-image-node-only",
+      "htmlAttributesAreNotAuthority": true
+    },
+    "inlineMath": {
+      "priority": "P2",
+      "untouchedSource": "preserve",
+      "editedNode": "canonical-dollar-delimiter",
+      "blockDelimiter": "$$"
+    }
+  },
+  "evidence": {
+    "fixtureSource": "tests/fixtures/visual-editor/corpus.ts",
+    "roundTripContract": "tests/visualEditorCorpus.test.ts",
+    "reviewRecord": "docs/visual-editor-acceptance.md#Gate-A-已确认清单"
+  },
+  "decisionGroups": [
+    {
+      "id": "setext-heading",
+      "status": "approved-preserve",
+      "question": "是否允许将 Setext 标题及其合成语料统一转换为 ATX 标题？",
+      "decision": "不允许打开、切换或编辑其他块时自动转换；已有 Setext 保留，新建标题默认 ATX，用户明确改变标题级别或样式时允许对应转换。",
+      "observedDifference": "当前直接 Lute 往返会改变 Setext 下划线和合成样例的表格格式；该差异不构成全局规范化批准。",
+      "allowedCanonicalChanges": [
+        "new-heading-atx",
+        "explicit-heading-level-or-style-change"
+      ],
+      "fixtureIds": [
+        "setext-heading",
+        "synthetic-001",
+        "synthetic-006",
+        "synthetic-011",
+        "synthetic-016",
+        "synthetic-021",
+        "synthetic-026",
+        "synthetic-031",
+        "synthetic-036",
+        "synthetic-041",
+        "synthetic-046",
+        "synthetic-051",
+        "synthetic-056",
+        "synthetic-061",
+        "synthetic-066",
+        "synthetic-071",
+        "synthetic-076",
+        "synthetic-081",
+        "synthetic-086",
+        "synthetic-091",
+        "synthetic-096"
+      ]
+    },
+    {
+      "id": "image-metadata",
+      "status": "approved-node-contract",
+      "question": "是否允许图床、远程、涂鸦和宽度图片按正式节点属性序列化？",
+      "decision": "允许建立正式图片节点属性；只有用户编辑图片节点时才允许该节点的稳定序列化，不能用偶然 HTML 属性替代图片合同。",
+      "observedDifference": "当前样例的部分直接往返可以 byte-equal，但正式图片节点属性和元数据序列化边界尚未定义。",
+      "allowedCanonicalChanges": [
+        "edited-image-node-attributes"
+      ],
+      "fixtureIds": [
+        "image-hosted",
+        "image-doodled",
+        "image-width",
+        "image-remote"
+      ]
+    },
+    {
+      "id": "inline-math",
+      "status": "approved-source-aware",
+      "question": "是否允许行内数学按新编辑器定义的节点和 Markdown 序列化形式规范化？",
+      "decision": "数学列为 P2；未编辑数学保留原始 source，用户明确编辑后才使用单美元分隔符的稳定形式；块数学使用 $$。",
+      "observedDifference": "当前样例直接往返 byte-equal，但行内数学仍未建立正式节点属性和序列化合同。",
+      "allowedCanonicalChanges": [
+        "edited-inline-math-node"
+      ],
+      "fixtureIds": [
+        "inline-math"
+      ]
+    }
+  ]
+}

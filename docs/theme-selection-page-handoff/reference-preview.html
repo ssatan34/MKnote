@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MKnote Theme Selection Reference</title>
+    <link rel="stylesheet" href="theme-selection-reference.css" />
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "SF Pro Text", "San Francisco", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        background: #f5f5f5;
+      }
+
+      body {
+        margin: 0;
+        min-width: 360px;
+        color: #1e293b;
+      }
+
+      .reference-shell {
+        width: min(860px, calc(100vw - 24px));
+        min-height: 640px;
+        margin: 24px auto;
+        padding: 16px;
+        box-sizing: border-box;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        background: #fefcf7;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="reference-shell">
+      <div id="app"></div>
+    </main>
+
+    <script>
+      const themes = [
+        ["mknote", "MKnote", ["#fefcf7", "#f1f5f9", "#475569", "#64748b"], ["#0d0d1a", "#1c1c32", "#94a3b8", "#cbd5e1"]],
+        ["catppuccin", "Catppuccin", ["#eff1f5", "#dce0e8", "#8839ef", "#7287fd"], ["#1e1e2e", "#313244", "#cba6f7", "#b4befe"]],
+        ["hermes", "Hermes", ["#fefcf7", "#f5f0e6", "#b8860b", "#c9a227"], ["#0d0d1a", "#1c1c32", "#ffd700", "#ffe566"]],
+        ["poseidon", "Poseidon", ["#f0f9ff", "#dbeafe", "#0ea5e9", "#0284c7"], ["#0d0d1a", "#1c1c32", "#0ea5e9", "#38bdf8"]],
+        ["ares", "Ares", ["#fefcf7", "#f8eceb", "#c0392b", "#d9776a"], ["#0d0d1a", "#1c1c32", "#ff4444", "#ff6666"]],
+        ["nous", "Nous", ["#f8faff", "#f1f5ff", "#0053fd", "#4d7fff"], ["#0d2f86", "#12378f", "#ffe6cb", "#8fb0ff"]],
+        ["midnight", "Midnight", ["#f5f4ff", "#e8e5fb", "#6f64c7", "#9189dc"], ["#08081c", "#0d0d28", "#8b80e8", "#b0a9ff"]],
+        ["ember", "Ember", ["#fff7f1", "#f2dfd0", "#c35e1d", "#d9915d"], ["#160800", "#1e0e04", "#d97316", "#f0a04e"]],
+        ["mono", "Mono", ["#f5f5f5", "#e6e6e6", "#555555", "#888888"], ["#0e0e0e", "#141414", "#9a9a9a", "#c2c2c2"]],
+        ["slate", "Slate", ["#f3f6fa", "#e7edf4", "#2f81d1", "#58a6ff"], ["#0d1117", "#161b22", "#58a6ff", "#8abfff"]],
+        ["captain-log", "GBF", ["#06111c", "#0b1c2b", "#d99a45", "#4d9ee8"], ["#020912", "#071522", "#e7a84f", "#4da7ff"]]
+      ];
+
+      const modes = [
+        ["system", "Follow System"],
+        ["light", "Light"],
+        ["dark", "Dark"]
+      ];
+
+      let mode = "light";
+      let selected = "mknote";
+
+      function usesDarkPalette() {
+        return mode === "dark" || (mode === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+
+      function paletteFor(item) {
+        return usesDarkPalette() ? item[3] : item[2];
+      }
+
+      function render() {
+        const modeMarkup = modes.map(([value, label]) => `
+          <label class="theme-mode-option">
+            <input type="radio" name="reference-theme-mode" value="${value}" ${mode === value ? "checked" : ""} />
+            <span class="theme-mode-label"><span class="theme-mode-state-icon" aria-hidden="true">${mode === value ? "✓" : "−"}</span>${label}</span>
+            <span class="theme-mode-box theme-mode-box--${value}" aria-hidden="true"></span>
+          </label>
+        `).join("");
+
+        const cardsMarkup = themes.map(([value, label]) => {
+          const [canvas, surface, primary, auxiliary] = paletteFor([value, label, ...themes.find((item) => item[0] === value).slice(2)]);
+          return `
+            <button type="button" class="theme-preview-card${selected === value ? " selected" : ""}" aria-pressed="${selected === value}" aria-label="使用${label}主题"
+              style="--theme-preview-canvas:${canvas};--theme-preview-surface:${surface};--theme-preview-primary:${primary};--theme-preview-auxiliary:${auxiliary}">
+              <span class="theme-preview-label">${label}</span>
+              <span class="theme-preview-canvas" aria-hidden="true">
+                <span class="theme-preview-surface"></span>
+                <span class="theme-preview-lines">
+                  <span class="theme-preview-line theme-preview-line--primary"></span>
+                  <span class="theme-preview-line theme-preview-line--auxiliary"></span>
+                  ${value === "captain-log" ? '<span class="theme-preview-line theme-preview-line--glow"></span>' : ""}
+                </span>
+              </span>
+            </button>
+          `;
+        }).join("");
+
+        const current = themes.find((item) => item[0] === selected);
+        document.querySelector("#app").innerHTML = `
+          <div class="mk-theme-selection settings-section-stack">
+            <section class="settings-card">
+              <div class="settings-card-head"><div><strong>主题</strong><span>管理应用的主题样式</span></div></div>
+              <fieldset class="theme-mode-selector"><legend>显示模式</legend><div class="theme-mode-options">${modeMarkup}</div></fieldset>
+              <div class="theme-preview-grid" role="list" aria-label="主题选项">${cardsMarkup}</div>
+              <p class="appearance-note">当前：${modes.find((item) => item[0] === mode)[1]} · <span style="color:${current[usesDarkPalette() ? 3 : 2][2]}">${current[1]}</span></p>
+            </section>
+          </div>
+        `;
+
+        document.querySelectorAll('input[name="reference-theme-mode"]').forEach((input) => {
+          input.addEventListener("change", (event) => {
+            mode = event.target.value;
+            render();
+          });
+        });
+        document.querySelectorAll(".theme-preview-card").forEach((card, index) => {
+          card.addEventListener("click", () => {
+            selected = themes[index][0];
+            render();
+          });
+        });
+      }
+
+      render();
+    </script>
+  </body>
+</html>

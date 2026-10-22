@@ -1,0 +1,309 @@
+/**
+ * 强调色选中态（Catppuccin / MKnote / Hermes / Poseidon / Ares）：
+ * 浅底 + accent 描边 + --mk-selection-fg 高亮字/图标；标题栏同色。
+ * 依赖 tokens 中的 --mk-selection-bg | border | fg。
+ */
+
+/* —— 标题栏笔记名 —— */
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .compact-title,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .compact-title {
+  color: var(--mk-selection-fg);
+}
+
+/* —— 选中态：浅底 + accent 边 + 高亮字/图标 —— */
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+  .compact-view
+  .icon-btn.active,
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+  .compact-view
+  .icon-btn.pinned,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+  .compact-view
+  .icon-btn.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+  .compact-view
+  .icon-btn.pinned,
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .statusbar-btn.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .statusbar-btn.active {
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+  box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+  .markdown-toolbar-btn:hover:not(:disabled),
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+  .markdown-toolbar-btn:hover:not(:disabled) {
+  background: var(--mk-pearl);
+  color: var(--mk-ink);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .compact-logo:hover,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .compact-logo:hover {
+  border-color: var(--mk-hairline);
+  background: var(--mk-pearl);
+  color: var(--mk-ink);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .compact-title:focus,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .compact-title:focus {
+  outline: 1.5px solid var(--mk-selection-border);
+  outline-offset: 0;
+  color: var(--mk-selection-fg);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .segmented button.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .segmented button.active {
+  background: var(--mk-canvas);
+  color: var(--mk-selection-fg);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1.5px var(--mk-selection-border);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-tag-row.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-tag-row.active {
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-folder.active,
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+  .library-folder-row.active
+  .library-folder,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-folder.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+  .library-folder-row.active
+  .library-folder {
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+  border: none;
+  box-shadow: none;
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-note-card.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-note-card.active {
+  border-color: var(--mk-selection-border);
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-tag-row.active,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-tag.active {
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+}
+
+[data-theme="light"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .folder-color-wrap:hover,
+[data-theme="dark"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .folder-color-wrap:hover {
+  background: var(--mk-pearl);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .compact-title {
+    color: var(--mk-selection-fg);
+  }
+
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+    .compact-view
+    .icon-btn.active,
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+    .compact-view
+    .icon-btn.pinned,
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .statusbar-btn.active {
+    background: var(--mk-selection-bg);
+    color: var(--mk-selection-fg);
+    box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+  }
+
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+    .markdown-toolbar-btn:hover:not(:disabled) {
+    background: var(--mk-pearl);
+    color: var(--mk-ink);
+  }
+
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .segmented button.active {
+    background: var(--mk-canvas);
+    color: var(--mk-selection-fg);
+    box-shadow: inset 0 0 0 1.5px var(--mk-selection-border);
+  }
+
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-folder.active,
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"])
+    .library-folder-row.active
+    .library-folder,
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-note-card.active,
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-tag-row.active,
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-tag-row.active {
+    background: var(--mk-selection-bg);
+    color: var(--mk-selection-fg);
+    box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+  }
+
+  :root[data-theme="system"]:is([data-dark-theme="catppuccin"], [data-dark-theme="hermes"], [data-dark-theme="poseidon"], [data-dark-theme="mknote"], [data-dark-theme="ares"]) .library-note-card.active {
+    border-color: var(--mk-selection-border);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .compact-title {
+    color: var(--mk-selection-fg);
+  }
+
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+    .compact-view
+    .icon-btn.active,
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+    .compact-view
+    .icon-btn.pinned,
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .statusbar-btn.active {
+    background: var(--mk-selection-bg);
+    color: var(--mk-selection-fg);
+    box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+  }
+
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .segmented button.active {
+    color: var(--mk-selection-fg);
+    box-shadow: inset 0 0 0 1.5px var(--mk-selection-border);
+  }
+
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-folder.active,
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"])
+    .library-folder-row.active
+    .library-folder,
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-note-card.active,
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-tag-row.active,
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-tag-row.active {
+    background: var(--mk-selection-bg);
+    color: var(--mk-selection-fg);
+    box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+  }
+
+  :root[data-theme="system"]:is([data-light-theme="catppuccin"], [data-light-theme="hermes"], [data-light-theme="poseidon"], [data-light-theme="mknote"], [data-light-theme="ares"]) .library-note-card.active {
+    border-color: var(--mk-selection-border);
+  }
+}
+
+/* 新增主题复用同一套 token 驱动的选中态，不再依赖旧主题白名单。 */
+[data-theme="light"]:is(
+  [data-light-theme="nous"],
+  [data-light-theme="midnight"],
+  [data-light-theme="ember"],
+  [data-light-theme="mono"],
+  [data-light-theme="slate"]
+) .compact-title,
+[data-theme="dark"]:is(
+  [data-dark-theme="nous"],
+  [data-dark-theme="midnight"],
+  [data-dark-theme="ember"],
+  [data-dark-theme="mono"],
+  [data-dark-theme="slate"]
+) .compact-title {
+  color: var(--mk-selection-fg);
+}
+
+[data-theme="light"]:is(
+  [data-light-theme="nous"],
+  [data-light-theme="midnight"],
+  [data-light-theme="ember"],
+  [data-light-theme="mono"],
+  [data-light-theme="slate"]
+) .compact-view .icon-btn.active,
+[data-theme="light"]:is(
+  [data-light-theme="nous"],
+  [data-light-theme="midnight"],
+  [data-light-theme="ember"],
+  [data-light-theme="mono"],
+  [data-light-theme="slate"]
+) .compact-view .icon-btn.pinned,
+[data-theme="dark"]:is(
+  [data-dark-theme="nous"],
+  [data-dark-theme="midnight"],
+  [data-dark-theme="ember"],
+  [data-dark-theme="mono"],
+  [data-dark-theme="slate"]
+) .compact-view .icon-btn.active,
+[data-theme="dark"]:is(
+  [data-dark-theme="nous"],
+  [data-dark-theme="midnight"],
+  [data-dark-theme="ember"],
+  [data-dark-theme="mono"],
+  [data-dark-theme="slate"]
+) .compact-view .icon-btn.pinned,
+[data-theme="light"]:is(
+  [data-light-theme="nous"],
+  [data-light-theme="midnight"],
+  [data-light-theme="ember"],
+  [data-light-theme="mono"],
+  [data-light-theme="slate"]
+) .statusbar-btn.active,
+[data-theme="dark"]:is(
+  [data-dark-theme="nous"],
+  [data-dark-theme="midnight"],
+  [data-dark-theme="ember"],
+  [data-dark-theme="mono"],
+  [data-dark-theme="slate"]
+) .statusbar-btn.active {
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+  box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+}
+
+[data-theme="light"]:is(
+  [data-light-theme="nous"],
+  [data-light-theme="midnight"],
+  [data-light-theme="ember"],
+  [data-light-theme="mono"],
+  [data-light-theme="slate"]
+) .library-note-card.active,
+[data-theme="dark"]:is(
+  [data-dark-theme="nous"],
+  [data-dark-theme="midnight"],
+  [data-dark-theme="ember"],
+  [data-dark-theme="mono"],
+  [data-dark-theme="slate"]
+) .library-note-card.active {
+  border-color: var(--mk-selection-border);
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+}
+
+/* Captain's Log 复用同一套 token 驱动的选中态。 */
+[data-theme="light"]:is([data-light-theme="captain-log"]) .compact-title,
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .compact-title,
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .compact-title {
+  color: var(--mk-selection-fg);
+}
+
+[data-theme="light"]:is([data-light-theme="captain-log"]) .markdown-toolbar-btn:hover:not(:disabled),
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .markdown-toolbar-btn:hover:not(:disabled),
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .markdown-toolbar-btn:hover:not(:disabled),
+[data-theme="light"]:is([data-light-theme="captain-log"]) .compact-toolbar .icon-btn:hover:not(:disabled),
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .compact-toolbar .icon-btn:hover:not(:disabled),
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .compact-toolbar .icon-btn:hover:not(:disabled) {
+  color: var(--mk-selection-fg);
+}
+
+[data-theme="light"]:is([data-light-theme="captain-log"]) .compact-view .icon-btn.active,
+[data-theme="light"]:is([data-light-theme="captain-log"]) .compact-view .icon-btn.pinned,
+[data-theme="light"]:is([data-light-theme="captain-log"]) .statusbar-btn.active,
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .compact-view .icon-btn.active,
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .compact-view .icon-btn.pinned,
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .statusbar-btn.active,
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .compact-view .icon-btn.active,
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .compact-view .icon-btn.pinned,
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .statusbar-btn.active {
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+  box-shadow: inset 0 0 0 1px var(--mk-selection-border);
+}
+
+[data-theme="light"]:is([data-light-theme="captain-log"]) .library-note-card.active,
+[data-theme="dark"]:is([data-dark-theme="captain-log"]) .library-note-card.active,
+[data-theme="system"]:is([data-dark-theme="captain-log"]) .library-note-card.active {
+  border-color: var(--mk-selection-border);
+  background: var(--mk-selection-bg);
+  color: var(--mk-selection-fg);
+}
+

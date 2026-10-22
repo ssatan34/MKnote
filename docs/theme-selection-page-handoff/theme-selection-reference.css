@@ -1,0 +1,309 @@
+/*
+ * Portable reference for the MKnote appearance route.
+ * If the host already exposes --mk-* tokens, those values win. The fallbacks
+ * only make this file renderable in an isolated preview.
+ */
+.mk-theme-selection {
+  --theme-ref-canvas: var(--mk-canvas, #fefcf7);
+  --theme-ref-ink: var(--mk-ink, #1e293b);
+  --theme-ref-body-muted: var(--mk-body-muted, #64748b);
+  --theme-ref-muted: var(--mk-muted, #64748b);
+  --theme-ref-primary: var(--mk-primary, #475569);
+  --theme-ref-primary-focus: var(--mk-primary-focus, #334155);
+  --theme-ref-pearl: var(--mk-pearl, #f1f5f9);
+  --theme-ref-parchment: var(--mk-parchment, #faf7f0);
+  --theme-ref-hairline: var(--mk-hairline, #e2e8f0);
+  --theme-ref-radius-md: var(--mk-radius-md, 10px);
+  --theme-ref-radius-pill: var(--mk-radius-pill, 9999px);
+  --theme-ref-font-display: var(
+    --mk-font-display,
+    "SF Pro Display",
+    "San Francisco",
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif
+  );
+  --theme-ref-motion-fast: var(--mk-motion-fast, 100ms);
+}
+
+.mk-theme-selection.settings-section-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mk-theme-selection .settings-card {
+  padding: 14px 16px;
+  border: 1px solid var(--theme-ref-hairline);
+  border-radius: var(--theme-ref-radius-md);
+  background: color-mix(in srgb, var(--theme-ref-ink) 3%, transparent);
+}
+
+.mk-theme-selection .settings-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mk-theme-selection .settings-card-head strong,
+.mk-theme-selection .settings-card-head span {
+  display: block;
+}
+
+.mk-theme-selection .settings-card-head strong {
+  color: var(--theme-ref-ink);
+  font-size: 14px;
+}
+
+.mk-theme-selection .settings-card-head span {
+  margin-top: 2px;
+  color: var(--theme-ref-muted);
+  font-size: 12px;
+}
+
+.mk-theme-selection .appearance-note {
+  color: var(--theme-ref-body-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.mk-theme-selection .theme-mode-selector {
+  margin: 2px 0 18px;
+  padding: 0;
+  border: 0;
+}
+
+.mk-theme-selection .theme-mode-selector legend {
+  margin-bottom: 8px;
+  color: var(--theme-ref-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mk-theme-selection .theme-mode-options {
+  display: flex;
+  width: 100%;
+  gap: 24px;
+}
+
+.mk-theme-selection .theme-mode-option {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--theme-ref-muted);
+  cursor: pointer;
+}
+
+.mk-theme-selection .theme-mode-option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mk-theme-selection .theme-mode-label {
+  order: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--theme-ref-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.mk-theme-selection .theme-mode-state-icon {
+  display: inline-block;
+  width: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 12px;
+  text-align: center;
+}
+
+.mk-theme-selection .theme-mode-box {
+  order: 1;
+  display: block;
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--theme-ref-hairline);
+  border-radius: 7px;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--theme-ref-ink) 4%, transparent);
+  transition:
+    border-color var(--theme-ref-motion-fast) ease,
+    box-shadow var(--theme-ref-motion-fast) ease;
+}
+
+.mk-theme-selection .theme-mode-box--light {
+  background: linear-gradient(to bottom, #ffffff 58%, #e5e7eb 58%);
+}
+
+.mk-theme-selection .theme-mode-box--dark {
+  background: linear-gradient(to bottom, #171827 58%, #303246 58%);
+}
+
+.mk-theme-selection .theme-mode-box--system {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--theme-ref-pearl),
+    var(--theme-ref-pearl) 9px,
+    var(--theme-ref-parchment) 9px,
+    var(--theme-ref-parchment) 18px
+  );
+}
+
+.mk-theme-selection .theme-mode-option:hover .theme-mode-box,
+.mk-theme-selection .theme-mode-option input:focus-visible + .theme-mode-label + .theme-mode-box {
+  border-color: var(--theme-ref-primary-focus);
+}
+
+.mk-theme-selection .theme-mode-option input:checked + .theme-mode-label + .theme-mode-box {
+  border-color: var(--theme-ref-primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--theme-ref-primary) 28%, transparent);
+}
+
+.mk-theme-selection .theme-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+  padding: 14px 2px 4px;
+}
+
+.mk-theme-selection .theme-preview-card {
+  position: relative;
+  display: block;
+  min-height: 126px;
+  padding: 21px 12px 12px;
+  border: 1px solid color-mix(in srgb, var(--theme-preview-primary) 72%, var(--theme-ref-hairline));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--theme-preview-canvas) 92%, var(--theme-preview-primary));
+  color: var(--theme-preview-primary);
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform var(--theme-ref-motion-fast) ease,
+    box-shadow var(--theme-ref-motion-fast) ease,
+    border-color var(--theme-ref-motion-fast) ease;
+}
+
+.mk-theme-selection .theme-preview-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--theme-preview-primary);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--theme-preview-primary) 18%, transparent);
+}
+
+.mk-theme-selection .theme-preview-card:focus-visible {
+  outline: 2px solid var(--theme-preview-primary);
+  outline-offset: 3px;
+}
+
+.mk-theme-selection .theme-preview-card.selected {
+  box-shadow: 0 0 0 2px var(--theme-ref-canvas), 0 0 0 4px var(--theme-preview-primary);
+}
+
+.mk-theme-selection .theme-preview-label {
+  position: absolute;
+  top: -13px;
+  left: 42px;
+  min-width: 82px;
+  padding: 4px 12px;
+  border: 1px solid color-mix(in srgb, var(--theme-preview-primary) 16%, var(--theme-ref-hairline));
+  border-radius: 5px;
+  background: var(--theme-ref-canvas);
+  color: var(--theme-preview-primary);
+  font-family: var(--theme-ref-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  box-shadow: 0 2px 6px color-mix(in srgb, var(--theme-ref-ink) 8%, transparent);
+}
+
+.mk-theme-selection .theme-preview-canvas {
+  position: relative;
+  display: block;
+  height: 84px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--theme-preview-primary) 16%, var(--theme-ref-hairline));
+  border-radius: 11px;
+  background: var(--theme-preview-canvas);
+}
+
+.mk-theme-selection .theme-preview-surface {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 29%;
+  background: var(--theme-preview-surface);
+  border-right: 1px solid color-mix(in srgb, var(--theme-preview-primary) 12%, var(--theme-ref-hairline));
+}
+
+.mk-theme-selection .theme-preview-lines {
+  position: absolute;
+  top: 29px;
+  right: 12%;
+  left: 31%;
+  display: grid;
+  gap: 10px;
+}
+
+.mk-theme-selection .theme-preview-line {
+  display: block;
+  height: 7px;
+  border-radius: var(--theme-ref-radius-pill);
+}
+
+.mk-theme-selection .theme-preview-line--primary {
+  width: 58%;
+  background: var(--theme-preview-primary);
+}
+
+.mk-theme-selection .theme-preview-line--auxiliary {
+  width: 78%;
+  background: var(--theme-preview-auxiliary);
+}
+
+.mk-theme-selection .theme-preview-line--glow {
+  width: 88%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(42, 133, 255, 0.32) 8%,
+    rgba(57, 154, 255, 0.92) 24%,
+    #dcf6ff 50%,
+    rgba(57, 154, 255, 0.92) 76%,
+    rgba(42, 133, 255, 0.32) 92%,
+    transparent 100%
+  );
+  box-shadow:
+    0 0 10px rgba(77, 167, 255, 0.98),
+    0 0 24px rgba(40, 140, 255, 0.72);
+  filter: blur(0.5px);
+}
+
+@media (max-width: 680px) {
+  .mk-theme-selection .theme-preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-theme-selection .theme-mode-box,
+  .mk-theme-selection .theme-preview-card {
+    transition: none;
+  }
+
+  .mk-theme-selection .theme-preview-card:hover {
+    transform: none;
+  }
+}
+

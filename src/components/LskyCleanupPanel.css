@@ -1,0 +1,22 @@
+.lsky-cleanup-panel { max-width: 720px; }
+.lsky-cleanup-hint { margin: 0; color: var(--mk-muted); font-size: 12px; line-height: 1.6; }
+.lsky-cleanup-scan { align-self: flex-start; min-width: 112px; }
+.lsky-cleanup-report { display: grid; gap: 12px; }
+.lsky-cleanup-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.lsky-cleanup-stats span { padding: 9px 10px; border-radius: var(--mk-radius-sm); background: var(--mk-pearl); color: var(--mk-muted); font-size: 12px; }
+.lsky-cleanup-stats strong { float: right; color: var(--mk-ink); }
+.lsky-cleanup-summary { display: flex; align-items: center; justify-content: space-between; color: var(--mk-muted); font-size: 13px; }
+.lsky-cleanup-summary strong { color: var(--mk-danger, #c0392b); }
+.lsky-cleanup-list { max-height: 240px; overflow: auto; display: grid; gap: 6px; padding-right: 3px; }
+.lsky-cleanup-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 10px; border: 1px solid color-mix(in srgb, var(--mk-muted) 22%, transparent); border-radius: var(--mk-radius-sm); }
+.lsky-cleanup-item > div { min-width: 0; display: grid; gap: 3px; }
+.lsky-cleanup-item strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--mk-ink); font-size: 12px; }
+.lsky-cleanup-item span { color: var(--mk-muted); font-size: 11px; white-space: nowrap; }
+.lsky-cleanup-delete { justify-self: end; border: 1px solid var(--mk-danger, #c0392b); border-radius: var(--mk-radius-sm); background: transparent; color: var(--mk-danger, #c0392b); padding: 7px 12px; cursor: pointer; }
+.lsky-cleanup-confirm { padding: 12px; border: 1px solid color-mix(in srgb, var(--mk-danger, #c0392b) 55%, transparent); border-radius: var(--mk-radius-sm); background: color-mix(in srgb, var(--mk-danger, #c0392b) 8%, var(--mk-canvas)); }
+.lsky-cleanup-confirm p { margin: 0 0 10px; color: var(--mk-ink); font-size: 12px; }
+.lsky-cleanup-confirm > div { display: flex; justify-content: flex-end; gap: 8px; }
+.lsky-cleanup-confirm button { border: 0; border-radius: var(--mk-radius-sm); padding: 6px 10px; background: var(--mk-pearl); color: var(--mk-ink); cursor: pointer; }
+.lsky-cleanup-confirm button.danger { background: var(--mk-danger, #c0392b); color: #fff; }
+.lsky-cleanup-message { margin: 0; color: var(--mk-muted); font-size: 12px; overflow-wrap: anywhere; }
+.lsky-settings-enabled { display: flex; align-items: center; gap: 9px; color: var(--mk-ink); font-size: 13px; }

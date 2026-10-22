@@ -1,0 +1,48 @@
+.mk-animated-checkbox {
+  display: inline-flex;
+  width: var(--mk-checkbox-size, 24px);
+  height: var(--mk-checkbox-size, 24px);
+  flex: 0 0 var(--mk-checkbox-size, 24px);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--mk-icon);
+  line-height: 0;
+}
+
+.mk-animated-checkbox input {
+  display: none;
+}
+
+.mk-animated-checkbox svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mk-animated-checkbox-path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+  stroke-dasharray: 241 9999999;
+  stroke-dashoffset: 0;
+}
+
+.mk-animated-checkbox input:checked ~ svg .mk-animated-checkbox-path {
+  stroke-dasharray: 70.5096664428711 9999999;
+  stroke-dashoffset: -262.2723388671875;
+}
+
+.mk-animated-checkbox:focus-within {
+  outline: 2px solid color-mix(in srgb, var(--mk-primary) 55%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.mk-animated-checkbox:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.55;
+}

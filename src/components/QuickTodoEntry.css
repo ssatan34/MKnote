@@ -1,0 +1,42 @@
+.quick-todo-entry {
+  position: relative;
+  display: inline-flex;
+}
+
+.quick-todo-popover {
+  position: absolute;
+  z-index: 1000;
+  top: calc(100% + 8px);
+  right: 0;
+  -webkit-app-region: no-drag;
+}
+
+.quick-todo-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--mk-muted-icon);
+}
+
+.quick-todo-trigger:hover,
+.quick-todo-trigger:focus-visible {
+  color: var(--mk-primary);
+  background: var(--mk-pearl);
+  outline: none;
+}
+
+.quick-todo-trigger:focus-visible {
+  border: 1px solid var(--mk-primary-focus);
+}
+
+.compact-statusbar .quick-todo-entry .quick-todo-popover {
+  top: auto;
+  bottom: calc(100% + 8px);
+}

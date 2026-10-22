@@ -1,0 +1,258 @@
+:root {
+  color: #e6edf5;
+  background: #111827;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 980px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(88, 166, 255, 0.16), transparent 34rem),
+    #111827;
+}
+
+.poc-shell {
+  width: min(1240px, calc(100vw - 64px));
+  margin: 0 auto;
+  padding: 42px 0 56px;
+}
+
+.poc-header,
+.source-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #7dd3fc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.status {
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  border-radius: 999px;
+  padding: 8px 13px;
+  color: #bae6fd;
+  background: rgba(14, 116, 144, 0.18);
+  font-size: 12px;
+}
+
+.status[data-state="error"] {
+  border-color: rgba(248, 113, 113, 0.55);
+  color: #fecaca;
+  background: rgba(127, 29, 29, 0.3);
+}
+
+.poc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.editor-card,
+.source-card {
+  min-height: 560px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.78);
+  box-shadow: 0 22px 70px rgba(2, 6, 23, 0.32);
+}
+
+.editor-card {
+  padding: 34px 42px;
+}
+
+#editor {
+  min-height: 490px;
+}
+
+.source-card {
+  overflow: hidden;
+  padding: 22px;
+}
+
+.source-heading {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.source-heading span {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+#markdown-output {
+  margin: 18px 0 0;
+  overflow: auto;
+  color: #cbd5e1;
+  font: 12px/1.7 "Cascadia Code", Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+.ProseMirror {
+  min-height: 460px;
+  outline: none;
+  color: #e2e8f0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3 {
+  color: #f8fafc;
+  line-height: 1.25;
+}
+
+.ProseMirror li[data-item-type="task"] {
+  list-style: none;
+  padding-left: 1.55rem;
+  position: relative;
+}
+
+.ProseMirror li[data-item-type="task"]::before {
+  align-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.9);
+  border-radius: 0.25rem;
+  color: #0f766e;
+  content: "";
+  display: inline-flex;
+  font-size: 0.75rem;
+  height: 1rem;
+  justify-content: center;
+  left: 0.1rem;
+  position: absolute;
+  top: 0.3rem;
+  width: 1rem;
+}
+
+.ProseMirror li[data-item-type="task"][data-checked="true"]::before {
+  content: "✓";
+}
+
+.ProseMirror blockquote {
+  margin-left: 0;
+  padding-left: 16px;
+  border-left: 3px solid #38bdf8;
+  color: #cbd5e1;
+}
+
+.ProseMirror code {
+  border-radius: 4px;
+  padding: 2px 5px;
+  color: #bae6fd;
+  background: rgba(14, 116, 144, 0.25);
+}
+
+.ProseMirror table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  table-layout: fixed;
+  /* 大文档中只让视口附近的表格参与布局，保留完整 DOM 与编辑语义。 */
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 120px;
+}
+
+.ProseMirror > p {
+  contain: layout paint style;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 40px;
+}
+
+/* 仅用于隔离基准，估算移除表格布局后的编辑事务成本。 */
+html[data-benchmark-layout="no-table-layout"] .ProseMirror table {
+  display: none !important;
+}
+
+.ProseMirror th,
+.ProseMirror td {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  min-width: 7rem;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.ProseMirror th {
+  color: #f8fafc;
+  background: rgba(14, 116, 144, 0.18);
+}
+
+.ProseMirror .selectedCell {
+  background: rgba(56, 189, 248, 0.18);
+}
+
+.table-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 8px;
+  border: 1px solid rgba(125, 211, 252, 0.28);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.72);
+}
+
+.table-tools[hidden] {
+  display: none;
+}
+
+.table-tools__label {
+  margin-right: 4px;
+  color: #7dd3fc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.table-tools button {
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: #dbeafe;
+  background: rgba(30, 41, 59, 0.9);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+
+.table-tools button:hover,
+.table-tools button:focus-visible {
+  border-color: #7dd3fc;
+  color: #fff;
+  outline: none;
+}

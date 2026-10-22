@@ -1,0 +1,15 @@
+[package]
+name = "mknote-visual-editor-phase1a-harness"
+version = "0.0.0"
+description = "Isolated MKnote Phase 1A WebView2 harness"
+edition = "2021"
+
+[lib]
+name = "mknote_visual_editor_phase1a_harness_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.2", features = [] }
+
+[dependencies]
+tauri = { version = "2.11.2", default-features = false, features = ["wry", "devtools"] }

@@ -1,0 +1,96 @@
+.lock-toggle-button {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--mk-radius-sm, 8px);
+  background: transparent;
+  color: var(--mk-muted-icon);
+  cursor: pointer;
+  transition:
+    background var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    color var(--mk-motion-fast) var(--mk-motion-ease-standard),
+    transform var(--mk-motion-fast) var(--mk-motion-ease-out);
+}
+
+.lock-toggle-button.locked {
+  background: var(--mk-primary) !important;
+  color: var(--mk-canvas) !important;
+}
+
+.lock-toggle-button:not(.locked) {
+  background: var(--mk-canvas);
+  color: var(--mk-ink);
+}
+
+.lock-toggle-button:active {
+  transform: scale(0.9);
+}
+
+.lock-toggle-button:focus-visible {
+  outline: 2px solid var(--mk-primary-focus);
+  outline-offset: 2px;
+}
+
+.lock-toggle-button__wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  width: 18px;
+  height: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lock-toggle-button__shackle {
+  display: block;
+  width: 10px;
+  height: 8px;
+  box-sizing: border-box;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  border-radius: 7px 7px 0 0;
+  transform-origin: right bottom;
+  transition: transform 420ms var(--mk-motion-ease-out);
+}
+
+.lock-toggle-button__body {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-top: -1px;
+  color: currentColor;
+}
+
+.lock-toggle-button:not(.locked) .lock-toggle-button__shackle {
+  transform: rotateY(150deg) translateX(2px);
+}
+
+/* 悬浮时预览下一状态，点击后由 locked 属性保持最终状态。 */
+.lock-toggle-button:not(.locked):hover {
+  background: var(--mk-canvas);
+  color: var(--mk-ink);
+}
+
+.lock-toggle-button:not(.locked):hover .lock-toggle-button__shackle {
+  transform: rotateY(0) translateX(0);
+}
+
+.lock-toggle-button.locked:hover {
+  background: var(--mk-primary) !important;
+  color: var(--mk-canvas) !important;
+}
+
+.lock-toggle-button.locked:hover .lock-toggle-button__shackle {
+  transform: rotateY(150deg) translateX(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lock-toggle-button,
+  .lock-toggle-button__shackle {
+    transition-duration: 0.01ms;
+  }
+}

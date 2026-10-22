@@ -1,0 +1,89 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Rust / Tauri
+src-tauri/target/
+# Agent/Owner 隔离运行生成的自定义 Cargo target，不属于源代码提交
+src-tauri/target-*/
+
+# 隔离可视化编辑器 PoC 的 Tauri/Playwright 生成物
+poc/visual-editor-phase1a/src-tauri/target/
+poc/visual-editor-phase1a/src-tauri/gen/
+poc/visual-editor-phase1a/test-results/
+poc/visual-editor-phase1a/artifacts/e2e-results.json
+# Visual Editor 隔离运行的完整 artifacts（报告、截图、临时用户数据）
+poc/visual-editor-phase1a/artifacts/
+poc/visual-editor-phase1a/poc/
+
+# Release smoke 验收截图与元数据
+.codex-smoke/
+
+# 绿色便携版输出（npm run build:green）
+portable/
+portable-release/
+绿色版/
+MKnote-portable-*.zip
+
+# 开发迁移 zip（npm run pack:dev）
+MKnote-dev.zip
+MKnote-dev-*.zip
+
+# 工具/本地缓存
+repomix-output.xml
+headroom_memory.db
+scripts/__pycache__/
+
+# 误放到仓库根目录的便签文件
+/20*.md
+
+# Local secrets
+.env
+.env.*
+
+# Local workspace (may reference personal paths)
+*.code-workspace
+# Figma 设计稿文件（本地参考，不入库）
+*.fig
+
+# Machine-specific MCP configuration (copy an example locally)
+/.kiro/settings/mcp.json
+/.cursor/mcp.json
+
+# Application data and credentials must remain local
+/config.json
+/settings.json
+/llms.txt
+/mknote-manifest.json
+/File/
+/inbox/
+/notes/
+**/.private/
+*.pem
+*.key
+*.pfx
+*.p12
+*.db
+*.sqlite
+*.sqlite3

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": "mknote.visual-editor.test-scenario-registry.v1",
+  "purpose": "为可视化编辑器升级登记每个测试层的唯一责任、主证据和复用边界。",
+  "executionRules": {
+    "newScenarioRequiresOnePrimaryOwner": true,
+    "secondaryLayersDeclareBoundaryOnly": true,
+    "formalT4UsesOneRunArtifactSet": true,
+    "passedEvidenceCanBeReusedWhen": [
+      "代码未变化",
+      "fixture 未变化",
+      "运行时与目标环境未变化"
+    ]
+  },
+  "baselinePolicy": {
+    "source": "docs/visual-editor-baseline-manifest.md",
+    "replayDefault": "skip",
+    "replayRequiresProductionChange": true,
+    "newPocMustNotRewriteBaseline": true,
+    "replayScope": [
+      "旧生产 WebView2",
+      "旧生产 IME",
+      "旧生产编辑器窗口行为"
+    ]
+  },
+  "layers": [
+    {
+      "id": "T0",
+      "title": "快速契约",
+      "responsibility": "编辑事务、source-aware、保存状态、revision-aware 队列、CAS 和安全语义",
+      "primaryEvidence": [
+        "tests/visualEditorInteractionContract.test.ts",
+        "tests/sourceAwareMarkdown.test.ts",
+        "tests/visualEditorSaveContract.test.ts",
+        "tests/revisionAwareWriteQueue.test.ts",
+        "tests/visualEditorSecurityContract.test.ts"
+      ],
+      "cadence": "每次相关改动，只运行受影响集合",
+      "doesNotProve": [
+        "真实 DOM paint",
+        "WebView2 窗口生命周期",
+        "Windows OS IME",
+        "Owner 主观手感"
+      ]
+    },
+    {
+      "id": "T1",
+      "title": "PoC DOM",
+      "responsibility": "React / ProseMirror DOM 接线和用户命令",
+      "primaryEvidence": [
+        "poc/visual-editor-phase1a/tests/e2e/phase1a.spec.ts",
+        "poc/visual-editor-phase1a/tests/phase1aContract.test.mjs"
+      ],
+      "cadence": "UI、schema 或 command 变化时",
+      "doesNotProve": [
+        "T0 全量语义无需重复运行",
+        "T2 WebView2 挂载",
+        "T3 OS IME",
+        "T5 Owner 手感"
+      ]
+    },
+    {
+      "id": "T2",
+      "title": "WebView2 冒烟",
+      "responsibility": "Tauri / WebView2 挂载、焦点、代表性编辑、剪贴板和重载边界",
+      "primaryEvidence": [
+        "poc/visual-editor-phase1a/scripts/phase1a-webview2-e2e.mjs",
+        "poc/visual-editor-phase1a/artifacts/phase1a-webview2-e2e.json"
+      ],
+      "cadence": "Tauri、WebView2、窗口、剪贴板或 harness 变化时",
+      "doesNotProve": [
+        "T3 真实 OS IME",
+        "T4 完整样本数量和 p95",
+        "T5 Owner 主观手感"
+      ]
+    },
+    {
+      "id": "T3",
+      "title": "OS IME 门",
+      "responsibility": "Microsoft Pinyin composition、候选、标点、中英模式、真实选区和 1000 次 composition",
+      "primaryEvidence": [
+        "poc/visual-editor-phase1a/scripts/phase1a-webview2-ime-e2e.mjs",
+        "poc/visual-editor-phase1a/artifacts/phase1a-webview2-ime-e2e.json"
+      ],
+      "cadence": "Gate B、IME / Selection / History 改动或发布前",
+      "doesNotProve": [
+        "T5 Owner 对持续输入和手感的接受",
+        "T4 性能、内存、保存和包体"
+      ]
+    },
+    {
+      "id": "T4",
+      "title": "完整兼容与性能",
+      "responsibility": "128 份兼容语料、raw / normalize、Selection / History / Paste 矩阵、100/500 KiB 性能、保存故障、进程内存和 Release 包体",
+      "primaryEvidence": [
+        "scripts/collect-visual-editor-t4-evidence.mjs",
+        "scripts/collect-visual-editor-t4-save-cas.ps1",
+        "scripts/collect-visual-editor-t4-process-memory.ps1",
+        "scripts/collect-visual-editor-t4-package-metrics.ps1",
+        "poc/visual-editor-phase1a/artifacts/phase1a-t4-evidence-manifest.json",
+        "docs/visual-editor-benchmark-protocol.md"
+      ],
+      "cadence": "Gate A / B / C / D 或发布前；通过后复用同一报告",
+      "doesNotProve": [
+        "T5 Owner 主观手感",
+        "生产编辑器已经接入"
+      ]
+    },
+    {
+      "id": "T5",
+      "title": "Owner 手工",
+      "responsibility": "唤起即写、候选操作、光标稳定、中英文切换、持续输入、粘贴和整体丝滑感",
+      "primaryEvidence": [
+        "docs/visual-editor-t5-owner-checklist.md"
+      ],
+      "cadence": "Gate B、Beta 和默认切换前",
+      "manual": true,
+      "doesNotProve": [
+        "自动化性能 p95",
+        "保存/CAS 机器指标",
+        "生产迁移安全"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "t0-editor-transaction",
+      "layer": "T0",
+      "primaryEvidence": "tests/visualEditorInteractionContract.test.ts",
+      "boundary": "只证明结构化模型的 Selection、History、IME transaction 和错误恢复，不替代真实 DOM 或 OS IME。"
+    },
+    {
+      "id": "t0-source-aware-safety",
+      "layer": "T0",
+      "primaryEvidence": "tests/sourceAwareMarkdown.test.ts",
+      "boundary": "只证明 raw / safe-source 原文保护和危险输入边界，不宣称新编辑器已接入生产。"
+    },
+    {
+      "id": "t0-save-cas",
+      "layer": "T0",
+      "primaryEvidence": "tests/visualEditorSaveContract.test.ts",
+      "boundary": "只证明保存状态、revision 和冲突模型；真实窗口延迟必须进入 T4。"
+    },
+    {
+      "id": "t1-poc-dom-commands",
+      "layer": "T1",
+      "primaryEvidence": "poc/visual-editor-phase1a/tests/e2e/phase1a.spec.ts",
+      "boundary": "只证明隔离 PoC 的 DOM 和命令路径，不重复承担 T0 语义或 T2 窗口证据。"
+    },
+    {
+      "id": "t2-webview2-lifecycle",
+      "layer": "T2",
+      "primaryEvidence": "poc/visual-editor-phase1a/scripts/phase1a-webview2-e2e.mjs",
+      "boundary": "只证明隔离 WebView2 的挂载、焦点、剪贴板和重载，不证明真实 OS IME 或 Owner 手感。"
+    },
+    {
+      "id": "t3-real-os-ime",
+      "layer": "T3",
+      "primaryEvidence": "poc/visual-editor-phase1a/scripts/phase1a-webview2-ime-e2e.mjs",
+      "boundary": "只证明目标 Windows 输入法探针结果；回车和 English layout 的环境边界不得自动标绿。"
+    },
+    {
+      "id": "t4-formal-gate-closure",
+      "layer": "T4",
+      "primaryEvidence": "scripts/collect-visual-editor-t4-evidence.mjs",
+      "boundary": "只接受同一正式运行的 machine-readable artifact 集合；缺失样本不能由旧报告、源码或单测补齐。"
+    },
+    {
+      "id": "t5-owner-feel",
+      "layer": "T5",
+      "primaryEvidence": "docs/visual-editor-t5-owner-checklist.md",
+      "boundary": "只记录 Owner 在隔离窗口中的主观接受与失败边界，自动化结果不能代替手工验收。"
+    }
+  ]
+}

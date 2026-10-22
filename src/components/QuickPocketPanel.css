@@ -1,0 +1,122 @@
+.quick-pocket-panel { --quick-pocket-title: #333333; --quick-pocket-text-icon: var(--mk-note-color-重要); position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; overflow: hidden; color: var(--mk-ink); background: var(--mk-canvas); font-family: var(--mk-font-text); }
+[data-theme="dark"] .quick-pocket-panel { --quick-pocket-title: var(--mk-ink); }
+.quick-pocket-panel button { border: 0; background: transparent; color: inherit; font: inherit; -webkit-app-region: no-drag; }
+.quick-pocket-header, .quick-pocket-input-footer, .quick-pocket-row, .quick-pocket-footer { display: flex; align-items: center; }
+.quick-pocket-header { min-height: 42px; justify-content: space-between; padding: 0 10px 0 12px; border-bottom: 1px solid var(--mk-hairline); }
+.quick-pocket-header[data-tauri-drag-region] { -webkit-app-region: drag; }
+.quick-pocket-title { display: inline-flex; align-items: center; gap: 7px; color: var(--quick-pocket-title); font: 600 15px/1.4 var(--mk-font-display); }
+.quick-pocket-title > .mk-icon { color: var(--mk-primary); }
+.quick-pocket-actions { display: inline-flex; gap: 2px; -webkit-app-region: no-drag; }
+.quick-pocket-actions button, .quick-pocket-row-action, .quick-pocket-drag, .quick-pocket-tag-picker button { width: 28px; min-width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: var(--mk-radius-sm); color: var(--mk-icon); }
+.quick-pocket-actions .quick-pocket-new-button { --plus_sideLength: 28px; --plus_topRightTriangleSideLength: 10px; position: relative; display: flex; justify-content: center; align-items: center; box-sizing: border-box; width: var(--plus_sideLength); min-width: var(--plus_sideLength); height: var(--plus_sideLength); padding: 0; border: 1px solid var(--mk-canvas); border-radius: 0 !important; background: transparent !important; overflow: hidden; color: var(--mk-primary); }
+.quick-pocket-actions .quick-pocket-new-button::before { position: absolute; top: 0; right: 0; width: 0; height: 0; border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0; border-style: solid; border-color: transparent var(--mk-primary) transparent transparent; content: ""; }
+.quick-pocket-actions .quick-pocket-new-button:hover:not(:disabled), .quick-pocket-actions .quick-pocket-new-button:focus-visible { background: var(--mk-primary) !important; cursor: pointer; }
+.quick-pocket-actions .plusIcon { position: relative; z-index: 1; width: 16px; height: 16px; fill: var(--mk-primary); stroke: var(--mk-primary); transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out; }
+.quick-pocket-actions .quick-pocket-new-button:hover .plusIcon, .quick-pocket-actions .quick-pocket-new-button:focus-visible .plusIcon { fill: var(--mk-on-primary); stroke: var(--mk-on-primary); transform: rotate(180deg); }
+.quick-pocket-panel button:hover:not(:disabled), .quick-pocket-panel button:focus-visible { background: var(--mk-pearl); outline: none; }
+.quick-pocket-input { position: relative; display: grid; gap: 6px; padding: 8px 46px 8px 10px; border-bottom: 1px solid var(--mk-divider); background: var(--mk-parchment); }
+.quick-pocket-title-field { display: flex; align-items: stretch; }
+.quick-pocket-title-input-wrap { position: relative; flex: 1 1 auto; min-width: 0; }
+.quick-pocket-input input, .quick-pocket-input textarea { width: 100%; box-sizing: border-box; border: 1px solid var(--mk-hairline); border-radius: var(--mk-radius-sm); padding: 6px 8px; outline: none; background: var(--mk-canvas); color: var(--mk-ink); font: 400 14px/1.45 var(--mk-font-text); resize: vertical; }
+.quick-pocket-title-field input { display: block; max-width: none; height: 2.7em; padding: 1em; border: none; border-radius: 0; color: var(--quick-pocket-title); caret-color: var(--mk-primary); font-family: "Instrument Sans", var(--mk-font-text), sans-serif; }
+.quick-pocket-title-field input::placeholder { color: var(--mk-body-muted); }
+.quick-pocket-title-field input:focus { outline: none; }
+.quick-pocket-title-line { z-index: 2; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; border-radius: 0; background-color: var(--mk-hairline); pointer-events: none; }
+.quick-pocket-title-field input:focus ~ .quick-pocket-title-line { animation: quick-pocket-title-draw 300ms ease-in; background: var(--mk-primary); }
+@keyframes quick-pocket-title-draw { 0% { width: 0; opacity: 0; filter: hue-rotate(0deg); } 100% { width: 100%; opacity: 1; filter: hue-rotate(360deg); } }
+.quick-pocket-save { display: flex !important; align-items: center; align-self: stretch; box-sizing: border-box; height: auto; min-height: 0; padding: 0 1em; border-radius: 0 !important; background: var(--mk-primary-focus) !important; color: var(--mk-on-primary) !important; cursor: pointer; font-family: "Instrument Sans", var(--mk-font-text), sans-serif; font-weight: 600; transition: background-color 0.5s ease, color 0.5s ease; }
+.quick-pocket-save:hover:not(:disabled), .quick-pocket-save:focus-visible, .quick-pocket-save:active { background: var(--mk-primary) !important; color: var(--mk-on-primary) !important; }
+.quick-pocket-input textarea:focus { border-color: var(--mk-primary); }
+.quick-pocket-input-footer { position: absolute; top: 8px; right: 8px; bottom: 8px; justify-content: center; }
+.quick-pocket-tag-picker { display: flex; flex-direction: column; gap: 4px; }
+.quick-pocket-tag-picker button.active { border: 1px solid currentColor; background: color-mix(in srgb, currentColor 12%, var(--mk-canvas)); }
+.quick-pocket-tag-picker .tag-text, .quick-pocket-tag.tag-text { color: var(--quick-pocket-text-icon); }
+.quick-pocket-tag-picker .tag-command, .quick-pocket-tag.tag-command { color: var(--mk-pocket-command); }
+.quick-pocket-tag-picker .tag-path, .quick-pocket-tag.tag-path { color: var(--mk-pocket-path); }
+.quick-pocket-tag-picker .tag-private, .quick-pocket-tag.tag-private { color: var(--mk-pocket-private); }
+.quick-pocket-text-button { min-height: 28px; padding: 2px 8px; border-radius: var(--mk-radius-sm) !important; color: var(--mk-muted) !important; }
+.quick-pocket-text-button.primary { color: var(--mk-primary) !important; }
+.quick-pocket-list { flex: 1; min-height: 0; overflow-y: auto; }
+.quick-pocket-row { position: relative; min-height: 48px; gap: 6px; padding: 0 8px; border-bottom: 1px solid var(--mk-divider); user-select: none; transition: transform var(--mk-motion-fast) var(--mk-motion-ease-standard), opacity var(--mk-motion-fast) var(--mk-motion-ease-standard), background-color var(--mk-motion-fast) var(--mk-motion-ease-standard); will-change: transform; }
+.quick-pocket-row.is-dragging { opacity: 0.72; background: var(--mk-pearl); }
+.quick-pocket-row.quick-pocket-insert-before::before, .quick-pocket-row.quick-pocket-insert-after::after { content: ""; position: absolute; right: 0; left: 0; height: 2px; background: var(--mk-primary); }
+.quick-pocket-row.quick-pocket-insert-before::before { top: -1px; }
+.quick-pocket-row.quick-pocket-insert-after::after { bottom: -1px; }
+.quick-pocket-row:hover { background: var(--mk-pearl); }
+.quick-pocket-drag { color: var(--mk-muted) !important; cursor: grab; touch-action: none; }
+.quick-pocket-copy { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; line-height: 1.35; }
+.quick-pocket-copy strong, .quick-pocket-copy span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.quick-pocket-copy strong { color: var(--quick-pocket-title); font-size: 14px; font-weight: 600; }
+.quick-pocket-copy span { color: var(--mk-muted); font-size: 12px; }
+.quick-pocket-copy span.quick-pocket-body-tag-text { color: var(--quick-pocket-title); }
+.quick-pocket-copy span.quick-pocket-body-tag-command { color: var(--mk-pocket-command); }
+.quick-pocket-copy span.quick-pocket-body-tag-path { color: var(--mk-pocket-path); }
+.quick-pocket-copy span.quick-pocket-body-tag-private { color: var(--mk-pocket-private); }
+.quick-pocket-tag-control { position: relative; flex: 0 0 28px; }
+.quick-pocket-tag { width: 28px; min-width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: var(--mk-radius-sm); color: var(--mk-icon); }
+.quick-pocket-tag--set { visibility: visible; opacity: 1; pointer-events: auto; }
+.quick-pocket-row:not(:has(.quick-pocket-tag--set)) .quick-pocket-tag { opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--mk-motion-fast) var(--mk-motion-ease-standard), visibility 0s linear var(--mk-motion-fast); }
+.quick-pocket-row:hover .quick-pocket-tag, .quick-pocket-row:focus-within .quick-pocket-tag { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+.quick-pocket-panel .quick-todo-add-tag-button { position: relative; z-index: 0; display: inline-flex; align-items: center; justify-content: center; overflow: visible; background: transparent; color: var(--mk-icon); isolation: isolate; }
+.quick-pocket-panel .quick-todo-add-tag-button:hover:not(:disabled), .quick-pocket-panel .quick-todo-add-tag-button[aria-expanded="true"] { background: transparent; color: var(--mk-primary); }
+.quick-pocket-row-action { color: var(--mk-icon); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--mk-motion-fast) var(--mk-motion-ease-standard), visibility 0s linear var(--mk-motion-fast); }
+.quick-pocket-row:hover .quick-pocket-row-action, .quick-pocket-row:focus-within .quick-pocket-row-action { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+.quick-pocket-row-action.danger { color: var(--mk-status-error); }
+.quick-pocket-tag-picker-popover { position: absolute; z-index: 4; top: 50%; right: calc(100% + 6px); display: inline-flex; align-items: center; gap: 4px; min-height: 32px; padding: 4px; border: 1px solid var(--mk-hairline); border-radius: 10px; background: #ffffff; box-shadow: 0 4px 12px color-mix(in srgb, var(--mk-ink) 12%, transparent); transform: translateY(-50%); animation: quick-pocket-tag-picker-enter 120ms ease-out both; }
+.quick-pocket-tag-picker-popover button { width: 28px; min-width: 28px; height: 28px; padding: 0; display: inline-grid; place-items: center; border-radius: var(--mk-radius-sm); color: var(--mk-icon); animation: quick-pocket-tag-icon-enter 100ms cubic-bezier(0.22, 0.8, 0.3, 1) both; }
+.quick-pocket-tag-picker-popover .tag-text { color: var(--quick-pocket-text-icon); }
+.quick-pocket-tag-picker-popover .tag-command { color: var(--mk-pocket-command); }
+.quick-pocket-tag-picker-popover .tag-path { color: var(--mk-pocket-path); }
+.quick-pocket-tag-picker-popover .tag-private { color: var(--mk-pocket-private); }
+.quick-pocket-tag-picker-popover button:hover:not(:disabled), .quick-pocket-tag-picker-popover button[aria-checked="true"] { background: transparent; }
+.quick-pocket-tag-picker-popover > :nth-child(1) { animation-delay: 172ms; }
+.quick-pocket-tag-picker-popover > :nth-child(2) { animation-delay: 148ms; }
+.quick-pocket-tag-picker-popover > :nth-child(3) { animation-delay: 124ms; }
+.quick-pocket-tag-picker-popover > :nth-child(4) { animation-delay: 100ms; }
+@keyframes quick-pocket-tag-picker-enter { from { opacity: 0; scale: 0.94; } to { opacity: 1; scale: 1; } }
+@keyframes quick-pocket-tag-icon-enter { from { opacity: 0; transform: translateX(6px) scale(0.72); } to { opacity: 1; transform: translateX(0) scale(1); } }
+.quick-pocket-error { margin: 0; padding: 6px 12px; border-bottom: 1px solid var(--mk-divider); color: var(--mk-status-error); font-size: 12px; }
+.quick-pocket-group-dialog-backdrop { position: absolute; z-index: 5; inset: 0; background: color-mix(in srgb, var(--mk-ink) 12%, transparent); }
+.quick-pocket-group-dialog { --quick-pocket-group-dialog-control-height: 40px; position: absolute; z-index: 1; top: 48px; left: 50%; display: flex; align-items: stretch; gap: 0; padding: 0; transform: translateX(-50%); animation: quick-pocket-group-dialog-slide-in 180ms var(--mk-motion-ease-out) both; will-change: opacity, transform; }
+@keyframes quick-pocket-group-dialog-slide-in { from { opacity: 0; transform: translate(-50%, -6px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.quick-pocket-group-dialog-field { position: relative; display: flex; flex: 0 0 auto; width: max-content; height: var(--quick-pocket-group-dialog-control-height); box-sizing: border-box; }
+.quick-pocket-group-dialog-input { display: block; width: clamp(120px, 44vw, 190px); height: 100%; box-sizing: border-box; padding: 0 1em; border: none; border-radius: 4px; outline: none; background-color: var(--mk-canvas); color: var(--mk-ink); caret-color: var(--mk-primary); font-family: "Instrument Sans", var(--mk-font-text), sans-serif; font-size: 14px; }
+.quick-pocket-group-dialog-input::placeholder { color: var(--mk-body-muted); }
+.quick-pocket-group-dialog-line { z-index: 2; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; border-radius: 4px; background-color: var(--mk-hairline); pointer-events: none; }
+.quick-pocket-group-dialog-input:focus ~ .quick-pocket-group-dialog-line { animation: quick-pocket-group-dialog-draw 300ms ease-in; background: var(--mk-primary); }
+@keyframes quick-pocket-group-dialog-draw { from { width: 0; opacity: 0; filter: hue-rotate(0deg); } to { width: 100%; opacity: 1; filter: hue-rotate(360deg); } }
+.quick-pocket-group-dialog-add { display: flex !important; align-items: center; height: var(--quick-pocket-group-dialog-control-height); box-sizing: border-box; padding: 0 1em; border: none; border-radius: 0 !important; background: var(--mk-primary-focus) !important; color: var(--mk-on-primary) !important; cursor: pointer; font-family: "Instrument Sans", var(--mk-font-text), sans-serif; font-size: 14px; transition: 0.5s all; }
+.quick-pocket-group-dialog-add:hover:not(:disabled), .quick-pocket-group-dialog-add:focus-visible, .quick-pocket-group-dialog-add:active { background: var(--mk-primary) !important; color: var(--mk-on-primary) !important; }
+@media (prefers-reduced-motion: reduce) { .quick-pocket-group-dialog, .quick-pocket-group-dialog-input:focus ~ .quick-pocket-group-dialog-line { animation: none; } }
+.quick-pocket-empty { margin: 0; padding: 28px 12px; color: var(--mk-muted); text-align: center; font-size: 12px; }
+.quick-pocket-group { box-sizing: border-box; border: 1px solid color-mix(in srgb, var(--mk-primary) 72%, var(--mk-divider)); }
+.quick-pocket-group.is-dragging { opacity: 0.7; }
+.quick-pocket-group-header { position: relative; display: flex; align-items: center; min-height: 20px; gap: 2px; padding: 0 5px; border-bottom: 1px solid var(--mk-divider); background: var(--mk-parchment); }
+.quick-pocket-group-header > button { flex: 0 0 auto; }
+.quick-pocket-group-drag { width: 20px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; border-radius: calc(var(--mk-radius-sm) / 2); background: color-mix(in srgb, var(--mk-primary) 12%, transparent); color: var(--mk-primary) !important; cursor: grab; touch-action: none; }
+.quick-pocket-group-drag:hover:not(:disabled), .quick-pocket-group-drag:focus-visible { background: color-mix(in srgb, var(--mk-primary) 22%, transparent) !important; }
+.quick-pocket-group-collapse, .quick-pocket-group-action { width: 20px; min-width: 20px; height: 20px; display: inline-grid; place-items: center; border-radius: calc(var(--mk-radius-sm) / 2); color: var(--mk-icon) !important; }
+.quick-pocket-group-header svg { width: 13px; height: 13px; }
+.quick-pocket-group-action.danger { color: var(--mk-status-error) !important; }
+.quick-pocket-group-name { min-width: 0; flex: 1 1 auto !important; overflow: hidden; padding: 0 3px; border-radius: calc(var(--mk-radius-sm) / 2); text-align: left; font-size: 13px; font-weight: 600; line-height: 18px; white-space: nowrap; text-overflow: ellipsis; }
+.quick-pocket-group-name-input { min-width: 0; flex: 1 1 auto; height: 18px; box-sizing: border-box; border: 1px solid var(--mk-primary); border-radius: calc(var(--mk-radius-sm) / 2); padding: 0 4px; outline: none; background: var(--mk-canvas); color: var(--mk-ink); font: 600 13px/16px var(--mk-font-text); }
+.quick-pocket-group-actions { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 2px; margin-left: auto; }
+.quick-pocket-group-count { min-width: 18px; color: var(--mk-muted); font-size: 11px; line-height: 18px; text-align: center; }
+.quick-pocket-group-items { padding-left: 12px; }
+.quick-pocket-group-items .quick-pocket-row { padding-left: 4px; }
+.quick-pocket-group-items .quick-pocket-row:last-child { border-bottom: 0; }
+.quick-pocket-row.quick-pocket-insert-group { background: color-mix(in srgb, var(--mk-primary) 10%, var(--mk-canvas)); box-shadow: inset 0 0 0 1px var(--mk-primary); }
+.quick-pocket-row.quick-pocket-insert-before::before, .quick-pocket-row.quick-pocket-insert-after::after { z-index: 2; }
+.quick-pocket-group-header.quick-pocket-insert-before::before, .quick-pocket-group-header.quick-pocket-insert-after::after { content: ""; position: absolute; z-index: 2; right: 0; left: 0; height: 2px; background: var(--mk-primary); }
+.quick-pocket-group-header.quick-pocket-insert-before::before { top: -1px; }
+.quick-pocket-group-header.quick-pocket-insert-after::after { bottom: -1px; }
+.quick-pocket-footer { min-height: 32px; justify-content: space-between; padding: 0 10px; border-top: 1px solid var(--mk-hairline); background: var(--mk-parchment); color: var(--mk-muted); font-size: 12px; }
+.quick-pocket-filter-bar, .quick-pocket-footer-status { display: inline-flex; align-items: center; }
+.quick-pocket-filter-bar { gap: 3px; }
+.quick-pocket-footer-status { gap: 18px; }
+.quick-pocket-filter-button { width: 28px; min-width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: var(--mk-radius-sm); color: var(--mk-icon); }
+.quick-pocket-filter-button.tag-text { color: var(--quick-pocket-text-icon); }
+.quick-pocket-filter-button.tag-command { color: var(--mk-pocket-command); }
+.quick-pocket-filter-button.tag-path { color: var(--mk-pocket-path); }
+.quick-pocket-filter-button.tag-private { color: var(--mk-pocket-private); }
+.quick-pocket-filter-button.active { background: color-mix(in srgb, currentColor 14%, var(--mk-canvas)); box-shadow: inset 0 0 0 1px currentColor; }

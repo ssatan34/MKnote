@@ -1,0 +1,19 @@
+<!doctype html><html><body><div id="root"></div><script type="module">
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { useQuickTodoController } from '/src/hooks/useQuickTodoController.ts';
+import { quickTodoService } from '/src/services/quickTodoService.ts';
+window.hookTest = { reads: 0, waiters: [] };
+quickTodoService.onChanged = async () => () => {};
+quickTodoService.list = () => {
+  window.hookTest.reads++;
+  return new Promise(resolve => window.hookTest.waiters.push(resolve));
+};
+quickTodoService.add = () => new Promise(resolve => { window.hookTest.finishWrite = resolve; });
+function Harness() {
+  const controller = useQuickTodoController('test');
+  window.hookTest.controller = controller;
+  return React.createElement('div', {}, controller.items.map(item => item.text).join(','));
+}
+createRoot(document.getElementById('root')).render(React.createElement(Harness));
+</script></body></html>

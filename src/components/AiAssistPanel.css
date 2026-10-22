@@ -1,0 +1,167 @@
+.ai-assist-menu {
+  position: fixed;
+  z-index: var(--mk-z-popover-raised);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: calc(100vw - 16px);
+  padding: 0;
+  transform: translateY(8px);
+  animation: ai-assist-menu-in 160ms var(--mk-motion-ease-out) both;
+}
+
+.ai-assist-menu--above {
+  transform: translateY(calc(-100% - 8px));
+  animation-name: ai-assist-menu-in-above;
+}
+
+.ai-assist-action {
+  animation: ai-assist-action-in 170ms var(--mk-motion-ease-out) backwards;
+}
+
+.ai-assist-action:nth-of-type(2) { animation-delay: 35ms; }
+.ai-assist-action:nth-of-type(3) { animation-delay: 70ms; }
+.ai-assist-action:nth-of-type(4) { animation-delay: 105ms; }
+
+.ai-assist-menu button {
+  --black-700: hsla(0 0% 35% / 1);
+  --border-radius: 9999px;
+  --transition: 0.3s ease-in-out;
+  --active: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 31px;
+  padding: 0.42rem 0.7rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transform: scale(calc(1 + (var(--active) * 0.1)));
+  transform-origin: center;
+  transition: transform var(--transition);
+}
+
+.ai-assist-menu button::before,
+.ai-assist-menu button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  transform: translate(-50%, -50%);
+  transition: all var(--transition);
+}
+
+.ai-assist-menu button::before {
+  z-index: 0;
+  background-color: var(--black-700);
+  box-shadow:
+    inset 0 0.5px hsl(0 0% 100%),
+    inset 0 -1px 2px 0 hsl(0 0% 0%),
+    0 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active)));
+}
+
+.ai-assist-menu button::after {
+  z-index: 2;
+  background-color: color-mix(in srgb, var(--mk-primary) 75%, transparent);
+  background-image:
+    radial-gradient(at 51% 89%, color-mix(in srgb, white 38%, var(--mk-primary)) 0, transparent 50%),
+    radial-gradient(at 100% 100%, color-mix(in srgb, white 20%, var(--mk-primary)) 0, transparent 50%),
+    radial-gradient(at 22% 91%, color-mix(in srgb, white 20%, var(--mk-primary)) 0, transparent 50%);
+  background-position: top;
+  opacity: var(--active);
+}
+
+.ai-assist-menu button:is(:hover, :focus-visible) {
+  --active: 1;
+  outline: none;
+}
+
+.ai-assist-menu button:active {
+  transform: scale(1);
+}
+
+.ai-assist-menu button .ai-assist-action-sparkle,
+.ai-assist-menu button span {
+  position: relative;
+  z-index: 10;
+}
+
+.ai-assist-menu button .ai-assist-action-sparkle {
+  width: 14px;
+  height: 14px;
+  overflow: visible;
+  color: white;
+}
+
+.ai-assist-menu button .ai-assist-action-sparkle path {
+  fill: currentColor;
+  stroke: currentColor;
+  transform-origin: center;
+}
+
+.ai-assist-menu button:is(:hover, :focus-visible) .ai-assist-action-sparkle path {
+  animation: ai-assist-action-sparkle 1.5s linear 0.5s infinite;
+}
+
+.ai-assist-menu button .ai-assist-action-sparkle path:nth-child(1),
+.ai-assist-menu button .ai-assist-action-sparkle path:nth-child(2),
+.ai-assist-menu button .ai-assist-action-sparkle path:nth-child(3) {
+  --scale-path: 1.2;
+}
+
+.ai-assist-menu button span {
+  color: white;
+}
+
+.ai-assist-menu button:disabled {
+  cursor: default;
+  opacity: 0.64;
+}
+
+.ai-assist-menu-error {
+  flex-basis: 100%;
+  max-width: 250px;
+  margin: 2px 0 0;
+  color: var(--mk-status-error);
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+@keyframes ai-assist-menu-in {
+  from { opacity: 0; transform: translateY(3px) scale(0.96); }
+  to { opacity: 1; transform: translateY(8px) scale(1); }
+}
+
+@keyframes ai-assist-menu-in-above {
+  from { opacity: 0; transform: translateY(calc(-100% - 3px)) scale(0.96); }
+  to { opacity: 1; transform: translateY(calc(-100% - 8px)) scale(1); }
+}
+
+@keyframes ai-assist-action-in {
+  from { opacity: 0; transform: translateY(5px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes ai-assist-action-sparkle {
+  0%, 34%, 71%, 100% { transform: scale(1); }
+  17%, 49%, 83% { transform: scale(var(--scale-path, 1)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-assist-menu,
+  .ai-assist-menu--above,
+  .ai-assist-action,
+  .ai-assist-menu button .ai-assist-action-sparkle path {
+    animation: none;
+  }
+}

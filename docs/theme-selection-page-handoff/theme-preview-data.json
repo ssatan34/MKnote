@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "source": "src/components/compact/UnifiedSettingsPanel.tsx + src/constants/themeAccents.ts",
+  "defaultTheme": "mknote",
+  "modeValues": ["system", "light", "dark"],
+  "themes": [
+    {
+      "value": "mknote",
+      "label": "MKnote",
+      "light": { "canvas": "#fefcf7", "surface": "#f1f5f9", "primary": "#475569", "auxiliary": "#64748b" },
+      "dark": { "canvas": "#0d0d1a", "surface": "#1c1c32", "primary": "#94a3b8", "auxiliary": "#cbd5e1" },
+      "accent": { "light": "#475569", "dark": "#94a3b8" }
+    },
+    {
+      "value": "catppuccin",
+      "label": "Catppuccin",
+      "light": { "canvas": "#eff1f5", "surface": "#dce0e8", "primary": "#8839ef", "auxiliary": "#7287fd" },
+      "dark": { "canvas": "#1e1e2e", "surface": "#313244", "primary": "#cba6f7", "auxiliary": "#b4befe" },
+      "accent": { "light": "#8839ef", "dark": "#cba6f7" }
+    },
+    {
+      "value": "hermes",
+      "label": "Hermes",
+      "light": { "canvas": "#fefcf7", "surface": "#f5f0e6", "primary": "#b8860b", "auxiliary": "#c9a227" },
+      "dark": { "canvas": "#0d0d1a", "surface": "#1c1c32", "primary": "#ffd700", "auxiliary": "#ffe566" },
+      "accent": { "light": "#b8860b", "dark": "#ffd700" }
+    },
+    {
+      "value": "poseidon",
+      "label": "Poseidon",
+      "light": { "canvas": "#f0f9ff", "surface": "#dbeafe", "primary": "#0ea5e9", "auxiliary": "#0284c7" },
+      "dark": { "canvas": "#0d0d1a", "surface": "#1c1c32", "primary": "#0ea5e9", "auxiliary": "#38bdf8" },
+      "accent": { "light": "#0ea5e9", "dark": "#38bdf8" }
+    },
+    {
+      "value": "ares",
+      "label": "Ares",
+      "light": { "canvas": "#fefcf7", "surface": "#f8eceb", "primary": "#c0392b", "auxiliary": "#d9776a" },
+      "dark": { "canvas": "#0d0d1a", "surface": "#1c1c32", "primary": "#ff4444", "auxiliary": "#ff6666" },
+      "accent": { "light": "#c0392b", "dark": "#ff4444" }
+    },
+    {
+      "value": "nous",
+      "label": "Nous",
+      "light": { "canvas": "#f8faff", "surface": "#f1f5ff", "primary": "#0053fd", "auxiliary": "#4d7fff" },
+      "dark": { "canvas": "#0d2f86", "surface": "#12378f", "primary": "#ffe6cb", "auxiliary": "#8fb0ff" },
+      "accent": { "light": "#0053fd", "dark": "#ffe6cb" }
+    },
+    {
+      "value": "midnight",
+      "label": "Midnight",
+      "light": { "canvas": "#f5f4ff", "surface": "#e8e5fb", "primary": "#6f64c7", "auxiliary": "#9189dc" },
+      "dark": { "canvas": "#08081c", "surface": "#0d0d28", "primary": "#8b80e8", "auxiliary": "#b0a9ff" },
+      "accent": { "light": "#6f64c7", "dark": "#8b80e8" }
+    },
+    {
+      "value": "ember",
+      "label": "Ember",
+      "light": { "canvas": "#fff7f1", "surface": "#f2dfd0", "primary": "#c35e1d", "auxiliary": "#d9915d" },
+      "dark": { "canvas": "#160800", "surface": "#1e0e04", "primary": "#d97316", "auxiliary": "#f0a04e" },
+      "accent": { "light": "#c35e1d", "dark": "#d97316" }
+    },
+    {
+      "value": "mono",
+      "label": "Mono",
+      "light": { "canvas": "#f5f5f5", "surface": "#e6e6e6", "primary": "#555555", "auxiliary": "#888888" },
+      "dark": { "canvas": "#0e0e0e", "surface": "#141414", "primary": "#9a9a9a", "auxiliary": "#c2c2c2" },
+      "accent": { "light": "#555555", "dark": "#9a9a9a" }
+    },
+    {
+      "value": "slate",
+      "label": "Slate",
+      "light": { "canvas": "#f3f6fa", "surface": "#e7edf4", "primary": "#2f81d1", "auxiliary": "#58a6ff" },
+      "dark": { "canvas": "#0d1117", "surface": "#161b22", "primary": "#58a6ff", "auxiliary": "#8abfff" },
+      "accent": { "light": "#2f81d1", "dark": "#58a6ff" }
+    },
+    {
+      "value": "captain-log",
+      "label": "GBF",
+      "light": { "canvas": "#06111c", "surface": "#0b1c2b", "primary": "#d99a45", "auxiliary": "#4d9ee8" },
+      "dark": { "canvas": "#020912", "surface": "#071522", "primary": "#e7a84f", "auxiliary": "#4da7ff" },
+      "accent": { "light": "#d99a45", "dark": "#e7a84f" }
+    }
+  ],
+  "knownRoleDifference": {
+    "value": "poseidon",
+    "mode": "dark",
+    "previewPrimary": "#0ea5e9",
+    "statusAccent": "#38bdf8",
+    "reason": "当前源实现的卡片预览色来自 THEME_PREVIEW_COLORS，底部当前状态文字来自 themeAccentColor；两者不是同一字段。保持两者分离才能复刻当前实现。"
+  }
+}
+

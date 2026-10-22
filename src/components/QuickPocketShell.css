@@ -1,0 +1,5 @@
+html, body, #root { width: 100%; height: 100%; margin: 0; }
+.quick-pocket-shell { width: 100%; height: 100%; overflow: hidden; background: var(--mk-canvas); color: var(--mk-ink); }
+.quick-pocket-shell-button { width: 28px; height: 28px; padding: 0; border: 0; border-radius: var(--mk-radius-sm); background: transparent; color: var(--mk-icon); cursor: pointer; }
+.quick-pocket-shell-button:hover, .quick-pocket-shell-button.active { background: var(--mk-pearl); color: var(--mk-primary); }
+.quick-pocket-shell-button.window-pin-button.pinned, .quick-pocket-shell-button.window-pin-button.pinned:hover { background: var(--mk-primary); color: var(--mk-canvas); }

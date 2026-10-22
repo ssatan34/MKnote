@@ -1,0 +1,92 @@
+.delete-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid var(--mk-hairline);
+  border-radius: var(--mk-radius-sm);
+  background: transparent;
+  color: var(--mk-icon);
+  padding: 0;
+  cursor: pointer;
+  transition: background 300ms, color 300ms, transform 200ms;
+}
+
+/* 各业务区域已有 button 选择器，重复 class 让删除按钮的统一视觉优先。 */
+.delete-button.delete-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: 1px solid var(--mk-hairline);
+  background: transparent;
+  color: var(--mk-icon);
+}
+
+.delete-button.quick-todo-delete {
+  color: var(--mk-icon) !important;
+}
+
+.delete-button__icon {
+  width: var(--delete-icon-size, 12px);
+  flex: 0 0 auto;
+  transition: transform 300ms var(--mk-motion-ease-out);
+}
+
+.delete-button__icon path {
+  fill: currentColor;
+}
+
+.delete-button:hover:not(:disabled) {
+  gap: 0;
+  background: color-mix(in srgb, var(--mk-primary) 18%, transparent);
+  color: var(--mk-primary);
+}
+
+.delete-button.delete-button:hover:not(:disabled) {
+  opacity: 1;
+  border-color: color-mix(in srgb, var(--mk-primary) 48%, var(--mk-hairline));
+  background: color-mix(in srgb, var(--mk-primary) 18%, transparent);
+  color: var(--mk-primary) !important;
+}
+
+.delete-button:hover:not(:disabled) .delete-button__icon--top {
+  transition-duration: 500ms;
+  transform: rotate(160deg);
+  transform-origin: bottom right;
+}
+
+.delete-button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.delete-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.delete-button--returning {
+  animation: delete-button-return 320ms var(--mk-motion-ease-out);
+}
+
+@keyframes delete-button-return {
+  from {
+    opacity: 0;
+    transform: scale(0.78);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .delete-button,
+  .delete-button__icon {
+    transition-duration: 0.01ms;
+  }
+}

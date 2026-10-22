@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "MKnote Visual Editor Phase 1A",
+  "version": "0.0.0",
+  "identifier": "com.sin.mknote.visual-editor-phase1a",
+  "build": {
+    "beforeDevCommand": "npm run dev -- --host 127.0.0.1 --port 4173",
+    "devUrl": "http://127.0.0.1:4173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "phase1a",
+        "title": "MKnote · Phase 1A 结构化编辑手感",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "decorations": true,
+        "visible": true,
+        "devtools": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline';"
+    }
+  },
+  "bundle": {
+    "active": false,
+    "icon": []
+  }
+}

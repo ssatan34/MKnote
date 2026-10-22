@@ -1,0 +1,6 @@
+.quick-pocket-entry { position: relative; display: inline-flex; }
+.quick-pocket-trigger { display: inline-flex; align-items: center; justify-content: center; width: 30px; min-width: 30px; height: 30px; padding: 0; border: 0; border-radius: var(--mk-radius-sm); background: transparent; color: var(--mk-muted-icon); }
+.quick-pocket-trigger:hover, .quick-pocket-trigger:focus-visible { color: var(--mk-primary); }
+.quick-pocket-trigger:hover, .quick-pocket-trigger:focus-visible { background: var(--mk-pearl); outline: none; }
+.quick-pocket-popover { position: absolute; z-index: var(--mk-z-popover); top: calc(100% + 8px); right: 0; width: 440px; height: 560px; max-width: calc(100vw - 16px); max-height: calc(100vh - 16px); -webkit-app-region: no-drag; border: 1px solid var(--mk-hairline); border-radius: var(--mk-radius-md); overflow: hidden; }
+.compact-statusbar .quick-pocket-entry .quick-pocket-popover { top: auto; bottom: calc(100% + 8px); }

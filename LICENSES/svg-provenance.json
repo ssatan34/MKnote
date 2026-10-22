@@ -1,0 +1,1443 @@
+{
+  "checkedOn": "2026-10-22",
+  "hashNormalization": "CRLF converted to LF before SHA-256",
+  "scope": "All 132 SVG files in the current source tree, excluding installed dependencies and build output. Metadata is attribution evidence, not legal certification.",
+  "files": [
+    {
+      "path": "docs/previews/window-pin-animation-preview.svg",
+      "lfSha256": "5a0e78b572633d8778d2dce815530cbe090e08cde904688ababf5ccf797e7074",
+      "component": "MKnote preview layout + IconPark open pin + Lucide closed pin",
+      "license": "MIT AND Apache-2.0 AND ISC",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Operate/pin.svg",
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "evidence": "Project-authored preview layout and animation; embedded closed pin replaced; open pin geometry matches IconPark.",
+      "sourceFiles": [
+        "dist/esm/icons/pin.mjs"
+      ]
+    },
+    {
+      "path": "docs/previews/window-pin-animation-release-preview.svg",
+      "lfSha256": "d5010ef395494282c0e9e815d8361695a6c6893e203a9eaf40ec78404def419b",
+      "component": "MKnote preview layout + IconPark open pin + Lucide closed pin",
+      "license": "MIT AND Apache-2.0 AND ISC",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Operate/pin.svg",
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "evidence": "Project-authored preview layout and animation; embedded closed pin replaced; open pin geometry matches IconPark.",
+      "sourceFiles": [
+        "dist/esm/icons/pin.mjs"
+      ]
+    },
+    {
+      "path": "src/assets/brand/logo-monochrome.svg",
+      "lfSha256": "b69fa235cd61c52e4ab174416514de2c00ea478b5a35dbcdb0a75383c1ddbf0b",
+      "component": "MKnote branding",
+      "license": "MIT",
+      "source": [
+        "src/assets/brand/logo-transparent.png"
+      ],
+      "evidence": "Project owner confirmed on 2026-10-22: original or AI-generated branding may be distributed with the project. Embedded PNG and derived icon exports share that authorization."
+    },
+    {
+      "path": "src/assets/icons/add-subtask.svg",
+      "lfSha256": "e3f5df5d48ca9312cb255031356809eab7e88a5949165f62d69fe4ab836b2691",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/add-subset.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/ai-assist.svg",
+      "lfSha256": "77b1313ed4ca2eb0b5eb34ef7e9149f72bf7e41d19dab449a2655aa0b2cedc0a",
+      "component": "Heroicons",
+      "license": "MIT",
+      "source": [
+        "https://github.com/tailwindlabs/heroicons/blob/v2.2.0/optimized/24/solid/sparkles.svg"
+      ],
+      "evidence": "Equivalent SVG geometry; export formatting/theme may differ."
+    },
+    {
+      "path": "src/assets/icons/ai.svg",
+      "lfSha256": "8b7a92db662dd9fc6d648690ef2f054c9785c7f11842d9b72dc65b5b81717de9",
+      "component": "Heroicons",
+      "license": "MIT",
+      "source": [
+        "https://github.com/tailwindlabs/heroicons/blob/v2.2.0/optimized/24/outline/sparkles.svg"
+      ],
+      "sourceFiles": [
+        "optimized/24/outline/sparkles.svg"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "Width/height and license comment only"
+    },
+    {
+      "path": "src/assets/icons/alarm-clock.svg",
+      "lfSha256": "a2bb5868a953cc1dc387a15d6d0c9c7b4af53c2fa6e57c9b7f77bfdbfbae564c",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/alarm-clock.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/align-center.svg",
+      "lfSha256": "59ccc2fd60cf968552b0dc18e1437a6a91feddab48587c16bf28e1328d5edfab",
+      "component": "Remix Icon",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/Remix-Design/RemixIcon/blob/8bc436bdd329cf342958d8effdd078bfa74354c6/icons/Editor/align-center.svg"
+      ],
+      "evidence": "Equivalent SVG geometry; export formatting/theme may differ."
+    },
+    {
+      "path": "src/assets/icons/align-left.svg",
+      "lfSha256": "cda39aedf526ce29c78098853ac3a067cf7cec5ad05e882a32bbda35dae58b27",
+      "component": "Remix Icon",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/Remix-Design/RemixIcon/blob/8bc436bdd329cf342958d8effdd078bfa74354c6/icons/Editor/align-left.svg"
+      ],
+      "evidence": "Equivalent SVG geometry; export formatting/theme may differ."
+    },
+    {
+      "path": "src/assets/icons/align-right.svg",
+      "lfSha256": "dd9d8f8877011bf0dcd5f4aa0cbb349f8926b7a1fa7743657fb149b0e3af2af6",
+      "component": "Remix Icon",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/Remix-Design/RemixIcon/blob/8bc436bdd329cf342958d8effdd078bfa74354c6/icons/Editor/align-right.svg"
+      ],
+      "evidence": "Equivalent SVG geometry; export formatting/theme may differ."
+    },
+    {
+      "path": "src/assets/icons/appearance.svg",
+      "lfSha256": "037aec35306ae8d5e62c1f80479479f74cd3c991a006091efb2802317355d0ef",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/setting-config.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/archive.svg",
+      "lfSha256": "b3bb84a1fe7624638f4a149277232ee5b69133c804835ddcb14caa2b570fc5fa",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Others/file-cabinet.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/autostart.svg",
+      "lfSha256": "83d03befd8f3a6d3f71e33da6dd22c51c25ffa8c4cd1b92ecb58ff56d9cd4413",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Others/power.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/blockquote.svg",
+      "lfSha256": "7c33d1b498460d9c093c8938d1f5fd8d5c3deafb8663e1c6602ec9c024908c57",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/quote.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/bold.svg",
+      "lfSha256": "2298471d550e741b0d8f84d54593e836cfa85d0a3b93170595e4562083d7df6f",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/text-bold.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/case-transform.svg",
+      "lfSha256": "980c6f9a72540ae4c8659ccaa3d9a5b8a769bb896821289bafd7e4796bb342e7",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/case-sensitive.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/check2.svg",
+      "lfSha256": "0966f7a4bcc08f160013f8a335989f70896ea6804fd0ad22ef30cfad96bdff4a",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/check-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/checkbox-checked.svg",
+      "lfSha256": "f493acd398a94e4b048f0ad1fe82530c2ce9e1999ccef771b13e224728a60b34",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/check-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/checkbox-unchecked.svg",
+      "lfSha256": "0966f7a4bcc08f160013f8a335989f70896ea6804fd0ad22ef30cfad96bdff4a",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/check-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/clear-format.svg",
+      "lfSha256": "33f3e70082b16d94af83adfb4d909fc2a8c335dd12ce00d2406728e5f463beff",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/clear-format.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/clear.svg",
+      "lfSha256": "60a588e8eadcb16035429b0cd240ed730eafb885a83f0bda3e23b14a7ff2164f",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/clear.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/clear4.svg",
+      "lfSha256": "a7b7180d2c376ea509b18cd32455980bc2db1c0b0cf31df850f9c349334a65a6",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/clear.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/close-other-tabs.svg",
+      "lfSha256": "de29555feb1ff8b4d5c892dceb40817395c831f1554390bcf0035100a2897896",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Abstract/rectangle-x.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/close.svg",
+      "lfSha256": "0d689be609ca8b64d289371d08de89bf6339310995c573e067e8d19bd0084188",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/close.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/cloud-hosted.svg",
+      "lfSha256": "2d2da235f585a8746e6867892ba9c7a8eff2a00961bec973e7ffa00349105081",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/cloud-upload.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/code-block.svg",
+      "lfSha256": "4316690d8803019cdef9beb3d76a982eef303d56f718aebef636dcdc48a0f84c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/code.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/code-collapse.svg",
+      "lfSha256": "19b34790562330ac87d2c1cd9e6e388e1ee0277e52d15e5c2a76d7ae6258561c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/collapse-text-input.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/code-expand.svg",
+      "lfSha256": "dfeeab59c588d5f461f7fc539dde2de4f58dfe168f1acd4fd996ddccd5e5dcbe",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/expand-text-input.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/collapse.svg",
+      "lfSha256": "a48f71cebb9975396df922369d07d848e5b757ab76ab9cfa9f4dd5a123b4dcbc",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/expand-down-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/confirm.svg",
+      "lfSha256": "2b077ac95c4e87fa8bd28c75db914a900aa47f65716343303e5144950df96d9b",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/check.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/copy-code.svg",
+      "lfSha256": "9f15e7cc79352e9c8cf1b9bea8156bbbebe0493b647bedbf98c3c7699181b01e",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/copy.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/default-note.svg",
+      "lfSha256": "d6d97624bfe1217ee1f81047fa9bf525b31bbbb3e1d1cbcf75f318e2b1280883",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/notepad.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/delete-table-column.svg",
+      "lfSha256": "63f8c394419c99639f693506a64eafffb1681d7aaf91251a415f85cedc4414e8",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/columns-3.mjs",
+        "dist/esm/icons/minus.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "Table plus/minus composition; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/delete-table-row.svg",
+      "lfSha256": "79dae8d5bcbb48f70ef899f687f418cc6586fa781d3faf17ca8c9914f02cf16b",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/rows-3.mjs",
+        "dist/esm/icons/minus.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "Table plus/minus composition; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/delete.svg",
+      "lfSha256": "915e6fa8bb2eca5a8c75c571d1149ce8e829eaff2223f423db86dd8ec51b0dd2",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/delete-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/dismiss.svg",
+      "lfSha256": "a2f22f08848f21df1125513fb7d609aaf2dc2f35744d5f37f6a232ed5a66e387",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/error.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/done3.svg",
+      "lfSha256": "f493acd398a94e4b048f0ad1fe82530c2ce9e1999ccef771b13e224728a60b34",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/check-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/drag-handle.svg",
+      "lfSha256": "158103c53f5dd33accc2a1082c470a4af284ef69796200e017ca198c6167cf5d",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/grip-vertical.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/edit.svg",
+      "lfSha256": "c15a51d36883119ca76baecfb081b3a6ba34bb567917345849a45b034a74b0f6",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/writing-fluently.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/edit2.svg",
+      "lfSha256": "43ee3e30089095b45f34396a6a8fcf438a029c48be99fb78bfbc392c5125f4bc",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/star.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/eye.svg",
+      "lfSha256": "104d739f49bdc17b992321de88e1070dec27a1dd8631db785e04d8740db4b033",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/eye.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/font-decrease.svg",
+      "lfSha256": "56f3b6021f67db0244dc822946f28a2a0433a16c65dea619fdb21e90e348a46f",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/text-style-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/font-increase.svg",
+      "lfSha256": "d35d7ca53e0d471d4243dd5b8de73215a92e738276b0a259e3f0a736c84e8649",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/text-style-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/h1.svg",
+      "lfSha256": "d1b6fc9a5218a1bafbe87db43355d245b3889a418462333cdaff7bab5bff7915",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/h1.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/h2.svg",
+      "lfSha256": "45b4482e35286513f5132c0c7b564874bbc3ba3a18cb7b84312b09f1f8a81550",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/h2.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/h3.svg",
+      "lfSha256": "ccfb197c52a6f36fb29051a0b8647f10c7e8b669bc40e2dc542c9328d219ece3",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/h3.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/highlight.svg",
+      "lfSha256": "e31f328bb5bd654460f854f00455216727374e179d6502a5eb6425ab74f87256",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/high-light.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/highlight2.svg",
+      "lfSha256": "f726a87cba5cf6a2fc792efe416f8a8ca583c988af19f4412626e6d18a090cde",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/tag-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/hotkey.svg",
+      "lfSha256": "e6003cae7644c073ba2f3912b11bb09faefa4397a485aca073314d2778334c22",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Hardware/keyboard-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/hr.svg",
+      "lfSha256": "328368810995a6abf291ec9d5ccfc3cacd9a3beb9a7b465777d2c13f9c5c6d22",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/dividing-line.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/image-resize.svg",
+      "lfSha256": "5dfe6b7cfe5dd285e1fe9471513f31337f811b7d0ed6a0cf301fc1b403e1251c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/full-screen-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/image.svg",
+      "lfSha256": "03b4313548f7f75a06a8eb2dc21bb2138368beea6d4355349e3954c402abda75",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Operate/add-pic.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/indent.svg",
+      "lfSha256": "e25502547785f63035f01ade8031e546904b366bfc604d41efbb0dfe5f34f423",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/indent-right.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/inline-code.svg",
+      "lfSha256": "2acf06cdd8885a993e4d654e781525438c71faf41ed963fa169d6107d03a244d",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/code-brackets.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/insert-table-column.svg",
+      "lfSha256": "f82db32d03673f5796129c0ba71096be50c3ab5be2433d9efa9a2861e57fdc5a",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/columns-3.mjs",
+        "dist/esm/icons/plus.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "Table plus/minus composition; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/insert-table-row.svg",
+      "lfSha256": "d355f2002de1411811fbb982ac820c8193f939891903fbf5d1af0301223204c5",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/rows-3.mjs",
+        "dist/esm/icons/plus.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "Table plus/minus composition; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/italic.svg",
+      "lfSha256": "0493b4da7e1fc2df5d6f3c8bdb8520115233af91f6893e85c12ea84decbe0443",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/text-italic.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/library.svg",
+      "lfSha256": "a960e0cb0ee9bc17163620cf196e25ca8199968aef94c9f0b745321830ab6429",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/library.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/link.svg",
+      "lfSha256": "37d6e894ce8012d8791561c1f7acad7be8f2ac82abcaece7e032ba9cabcc47ad",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/unlink.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/lock-closed.svg",
+      "lfSha256": "5025d0f368667c42f70f1ac982898270e89e9ce1964070226c5467b22aea17e4",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/lock.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/lock-closed2.svg",
+      "lfSha256": "c1699943a5c81a7189f7a8ecedab4b9480feb7ae28083125fb5e129259f142a7",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/pin.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/lock-open.svg",
+      "lfSha256": "8727e58dfee5f05a4caf776d8e15402edadb4bf23bef001843db016c0f9aaaac",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/unlock.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/lock-open2.svg",
+      "lfSha256": "df3b2e8af1e91ff7af3917f9798a96ed997ab76276306f656f36245ef3bdf1c0",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Operate/pin.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/logo.svg",
+      "lfSha256": "5785b8ab821f134bb90eb6c73a9d59a28dd210f47f7552a9c5be237cc5b371d2",
+      "component": "MKnote branding",
+      "license": "MIT",
+      "source": [
+        "src/assets/brand/logo-transparent.png"
+      ],
+      "evidence": "Project owner confirmed on 2026-10-22: original or AI-generated branding may be distributed with the project. Embedded PNG and derived icon exports share that authorization."
+    },
+    {
+      "path": "src/assets/icons/new-folder.svg",
+      "lfSha256": "fea2844c2d38c09fd080db1ec6f0e26c3e8f3280a6ce9b415192f9370b87c80f",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/folder-plus.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/new-note-in-folder.svg",
+      "lfSha256": "29e3f61c18a126476617220a01667aef08447e4e683e28fa68c7499220202a36",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/folder-lock-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/new-note.svg",
+      "lfSha256": "b208dd0ac79c5b33e5e0b4e6eb4a929830aa0f8bd8b5f941f8fdb2682ab0bad7",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/newlybuild.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/ol.svg",
+      "lfSha256": "30b46b073ede08752463f0e79ec4353379ba527f701c1a151d7d25d32561ebac",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/ordered-list.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/open-containing-folder.svg",
+      "lfSha256": "0166d300c7ecdc75ea5aca880a63ab91a0cbcebb9feceebcbb84922ce79c59e1",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/folder-withdrawal.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/open-lab.svg",
+      "lfSha256": "2c49e96e59be712d7845dcc00baf6f85c77b0092a1f67300870aee5ec0d7c25b",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/book.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/open-sticky.svg",
+      "lfSha256": "2a95134a3279514a23f6e39be1b7973a948600f6fa97d04f8a0a326fb85f1907",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/sticky-note.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/open-todo.svg",
+      "lfSha256": "943ad0b7158186692f8a114d89bb0b9bb2775469c4115b06e16335c73cf7c80e",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/list.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/outdent.svg",
+      "lfSha256": "aeb16f592171f40b5aaeb08fc6a9bcdd222e26cc1a874264c596487ac0508c41",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/indent-left.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/pick-folder.svg",
+      "lfSha256": "1f8df15a4d6c6934ad7fed4c01da800b777fa44b1f850b9eb62e6ee47479c705",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/folder-open.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/pick-folder2.svg",
+      "lfSha256": "85b009f9b07d5abccb2fc2df81cc8adaa64721754c60c195b8ba9e6f00202aa9",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Connect/assembly-line.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/pills.svg",
+      "lfSha256": "7f3b3fadf6042074e217900aa86b3ba63396f91d94b94b9d3be02a73a2bd6a52",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/write.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/pin-off.svg",
+      "lfSha256": "244b4e6d75d6e6f99ec9bd6e51bfeee8abfbdd09e1dd487e34bc35ecd74e8dff",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/pin-off.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/pin-on.svg",
+      "lfSha256": "c1699943a5c81a7189f7a8ecedab4b9480feb7ae28083125fb5e129259f142a7",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/pin.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/Platte.svg",
+      "lfSha256": "45e0d50f2e7872ca96811c562ae2007cb692f07aad5c2110d104555293d658a5",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/platte.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/preview.svg",
+      "lfSha256": "a1991f952a72316d525a5a482a342a2e9dcb71a7ec00bcda105884fb323ab5b3",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/preview-open.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/quick-lock-closed2.svg",
+      "lfSha256": "08a2864f19a7ec2f5d4cd638ca4799b7eee0093c480802393b2fda7075974a10",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Peoples/personal-privacy.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/quick-todo-idea.svg",
+      "lfSha256": "23770e9ce64fe6481d31e2ee3a06b0266b0cd37dfc4e277d691e96c591dd365c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/tips.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/quick-todo-important-urgent.svg",
+      "lfSha256": "23de77a034ef6edd93c61dbc9758665fabe1446d1b10469ce1aaa921f7642131",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/circle-alert.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/quick-todo-important.svg",
+      "lfSha256": "bbdb3c09a797de37c21df0a037040fc42f9c8f289db3cacd388acf4f27db59df",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Health/endocrine.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/quick-todo-next.svg",
+      "lfSha256": "edd8d7e984d118af79ad40e28144d3c7c17edfee656dd2c786cea336c2526774",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/adjacent-item.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/quick-todo-urgent.svg",
+      "lfSha256": "b92c0395906dc66edadffc542f9d90c7b9b909264421cf61e4001eab7c143aa7",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/zap.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/quick-todo-waiting.svg",
+      "lfSha256": "a9d89ff7e99d741e9afaf7a332386eb27a3e463732a736fb25300806dc9e649f",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Others/hourglass-null.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/recent-notes.svg",
+      "lfSha256": "61abbad3c34d74981b2692e469fddfdf67faf2fccc89c83d6693fef4fb0da2d4",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Time/history.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/recycle-bin.svg",
+      "lfSha256": "ed957b32b1f38eff8a1ab2776d5bed5fd6b08ce2753d7beb61342b83f056ec31",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/delete.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/redo.svg",
+      "lfSha256": "1613a9a611a4bcb8bc22ee2793e9c9947e3a9ccf4a4a207972eafebcb4def9ee",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/redo.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/rename.svg",
+      "lfSha256": "fbb89a60e8fcd070f8cc7efa168a12e690ba570bce017a08ac2e57f131937fad",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/text-cursor-input.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/run-script.svg",
+      "lfSha256": "f82b1ac630aefe1eeeb19857c567eabec07295d6b8177ba05b975c0a5164b7f6",
+      "component": "Feather",
+      "license": "MIT",
+      "source": [
+        "https://github.com/feathericons/feather/blob/v4.29.2/icons/zap.svg"
+      ],
+      "evidence": "Equivalent SVG geometry; export formatting/theme may differ."
+    },
+    {
+      "path": "src/assets/icons/run-script2.svg",
+      "lfSha256": "64dc7a9c0afc05c473e432fed46b423e58c3a1aeccf50ddd70a4239e53a4bc80",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/terminal.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/s3.svg",
+      "lfSha256": "4b969e357687112c5f9731d77ed97e223d71355f8a93a5f54a83508c7b5da3db",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Connect/link-cloud.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/save.svg",
+      "lfSha256": "744cb5c2d87eeca722d153305779a87ef769f705dd130408830ae41a9c0438e3",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/save-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/search-all.svg",
+      "lfSha256": "7da86401c68a3028667a94cfa8227a11d84bf35a5f83cfa0358d6583fa3c636d",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/doc-search-two.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/search.svg",
+      "lfSha256": "8f746782ffe376c948c8cdb40414a4c6d8d949ff07c4278766a38d564d199cda",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/search.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/strikethrough.svg",
+      "lfSha256": "6c26925f4114fc42cfdcc2216171b77b3be4714bfae19feb4b2348bd18a2fb85",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/strikethrough.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/sync-manual.svg",
+      "lfSha256": "540190e309f29b772474796f3a673b61db75856760b362b82cb28b8377d730c1",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Connect/link-cloud-sucess.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/sync-settings.svg",
+      "lfSha256": "804f55a16d6a45ed373fac9fa33cb1b88051efdc0977f8d61df58703abb1cb73",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/settings-2.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/sync.svg",
+      "lfSha256": "1c255919f6ad9723b601dc3624b36755ddceda64a84cd809e34266d12b764b2b",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/upload-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/tab-chevron-left.svg",
+      "lfSha256": "6745b4d1690f01930aa10b3f39dcb9144fa2211b75c18e999c7354b138ef4ada",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/left-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/tab-chevron-right.svg",
+      "lfSha256": "12577dec6f1f838b0ce85bfd0dfb33516a2d37a08cff93f739c16cede9c62b2b",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/right-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/table.svg",
+      "lfSha256": "fc0c34738b40dfe005442be63565f4245cf971059a57fc581f2fc94c11678bd2",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/insert-table.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/tag.svg",
+      "lfSha256": "9bf6ac3d739d9dfa259bd5b89fac77eb7b63ae38430c4c49f646b6ebea85b9b9",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/tag.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/task-done.svg",
+      "lfSha256": "321ca80f2ea782b0f710e1a77b69d365c6a98352f573de953eb824922e8c5a5e",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Charts/data-arrival.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/task-done2.svg",
+      "lfSha256": "61c863cc4f94f1f407bb294134b915d36bd60d5291e3dfb847e72db860d6bb3c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Character/correct.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/task.svg",
+      "lfSha256": "c864d791039f38da11425f67cbab10221639da1e90af348b9fcc365d6fcbed29",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/check-correct.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-comms.svg",
+      "lfSha256": "ad6af65a5a95f43f0e2865fa5f7d3514f87128526a7785f1cb8fbb8aef4246bc",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Communicate/message-emoji.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-concept.svg",
+      "lfSha256": "d81c8b47701ce3e4c3052c5283ae200e1bc09004b661a73a9e994bf13a94925c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Peoples/id-card-v.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-meeting.svg",
+      "lfSha256": "2db5a77f22220c7fca2a3351d27483749db8035ec11b7327e95c0f53ce481f4e",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/bookmark.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-reading.svg",
+      "lfSha256": "63529f91dedbfafabf2a991b1a7287d817e3b50aef34a59fc99d21e87b11c2a9",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Books/bookshelf.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-shopping.svg",
+      "lfSha256": "d1f225555423db8bc4da5a7d316e9958d51c143a042dbc26f5276e84cf27b822",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/shopping-cart-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-stash.svg",
+      "lfSha256": "e9355cecb87749ea47b3e08d8017ab4b6b04b2fe04fc8397e5c46d93de3a5d50",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Abstract/ad-product.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-today.svg",
+      "lfSha256": "1c81398fd6d9d1c5c822fb0528f2978f5fd3626fa1e4d1c9791c5dcda2a51c65",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/calendar.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template-travel.svg",
+      "lfSha256": "20c16fa9c1c5b5a37d14893076ed840d52eeb81625ddab3d15be623bcfd36bb3",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Travel/round-trip.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/template.svg",
+      "lfSha256": "f441ab0cced7bb6b45d54296f48074a0c881ced1ae20b5355b18bb9b9954170b",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Others/page-template.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/Text-style-one (文本样式).svg",
+      "lfSha256": "d35d7ca53e0d471d4243dd5b8de73215a92e738276b0a259e3f0a736c84e8649",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/text-style-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/theme-dark.svg",
+      "lfSha256": "2c078643e73df0a08a1549bc7732256a4e760a6d7120e4c9d31620215445ea8d",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Weather/moon.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/theme-light.svg",
+      "lfSha256": "854d3f7d679fd8f6612132cc10abf39e44130deeba4a1da41c74dd737df8f832",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Weather/sun-one.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/theme-system.svg",
+      "lfSha256": "ced59ecbf57e91596f6cf00f2511da1fbf3a3be9206c3642420bf935742bc227",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/airplay.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/timeline.svg",
+      "lfSha256": "75a049dca683eac6b3c1c2bd876285866be79e965391e90ac073d63f99290421",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Others/hourglass-null.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/timeline.svg.svg",
+      "lfSha256": "75a049dca683eac6b3c1c2bd876285866be79e965391e90ac073d63f99290421",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Others/hourglass-null.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/ul.svg",
+      "lfSha256": "57070d754288ff2fc3a5199ed6aea5f92e8f3e0f28bdc9e732ad1ef055002f5c",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/list-two.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/underline.svg",
+      "lfSha256": "9edcfb6bd8a29d93d2e65e115d2679b7b71624bbd3e6ca06b0db248ac65b9446",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Edit/text-underline.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/undo.svg",
+      "lfSha256": "3b783b7b60a9d168c67d1d45e2bd97a898d9c9f79841ae059040042cafa5d176",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Arrows/undo.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/vault-curtain-closed.svg",
+      "lfSha256": "ef19e727e051d5cbb695c0d298a16d724697cd31f9ea14cb8f429af0d972d790",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/blinds.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/vault-curtain-open.svg",
+      "lfSha256": "f3a95bc42c4435db78afd1b8224740797141ddcfbc205a55bbca6ac2c4e3f8f2",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/blinds.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "Slats compacted for open state; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/window-pin-closed.svg",
+      "lfSha256": "c1699943a5c81a7189f7a8ecedab4b9480feb7ae28083125fb5e129259f142a7",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/pin.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/window-pin-open.svg",
+      "lfSha256": "df3b2e8af1e91ff7af3917f9798a96ed997ab76276306f656f36245ef3bdf1c0",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Operate/pin.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    },
+    {
+      "path": "src/assets/icons/zone-default.svg",
+      "lfSha256": "b7c5686d5498967b6ec0ecf176dbbb1174ddc245c40b1c2cbe43ffe1b7bcb25f",
+      "component": "Lucide",
+      "license": "ISC",
+      "source": [
+        "https://registry.npmjs.org/lucide-react/-/lucide-react-1.20.0.tgz"
+      ],
+      "sourceFiles": [
+        "dist/esm/icons/folders.mjs"
+      ],
+      "evidence": "Replaced during authorization cleanup using the pinned upstream package.",
+      "modifications": "SVG serialization; currentColor; 1.5px stroke"
+    },
+    {
+      "path": "src/assets/icons/zone-inbox.svg",
+      "lfSha256": "44ca007adda2bf67acf857fef19ef65d14a2be8c54deaafeff03f4435ecac4dc",
+      "component": "IconPark",
+      "license": "Apache-2.0",
+      "source": [
+        "https://github.com/bytedance/IconPark/blob/bed2e8d1e451ffc66cbc4def3ba54fcc1f318d9e/source/Base/inbox.svg"
+      ],
+      "evidence": "Matched path/segment geometry; local scaling, theming and edits retained. Attribution covers upstream portions, not a claim of byte identity."
+    }
+  ]
+}

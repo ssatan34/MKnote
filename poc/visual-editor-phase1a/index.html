@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MKnote Visual Editor Phase 1A PoC</title>
+  </head>
+  <body>
+    <main class="poc-shell">
+      <header class="poc-header">
+        <div>
+          <p class="eyebrow">MKnote / Phase 1A</p>
+          <h1>结构化编辑手感 PoC</h1>
+        </div>
+        <span id="editor-status" class="status" data-state="booting">启动中</span>
+      </header>
+      <section class="poc-grid">
+        <article class="editor-card">
+          <div id="editor" aria-label="结构化 Markdown 编辑器"></div>
+          <nav id="table-tools" class="table-tools" aria-label="表格操作" hidden>
+            <span class="table-tools__label">表格</span>
+            <button type="button" data-table-action="add-row-before">上方插入行</button>
+            <button type="button" data-table-action="add-row-after">下方插入行</button>
+            <button type="button" data-table-action="add-col-before">左侧插入列</button>
+            <button type="button" data-table-action="add-col-after">右侧插入列</button>
+            <button type="button" data-table-action="delete-row">删除当前行</button>
+            <button type="button" data-table-action="delete-col">删除当前列</button>
+            <button type="button" data-table-action="align-left">左对齐</button>
+            <button type="button" data-table-action="align-center">居中</button>
+            <button type="button" data-table-action="align-right">右对齐</button>
+          </nav>
+        </article>
+        <aside class="source-card">
+          <div class="source-heading">
+            <h2>临时序列化</h2>
+            <span>不写入生产文件</span>
+          </div>
+          <pre id="markdown-output"></pre>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
