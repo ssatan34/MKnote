@@ -51,3 +51,17 @@ package.json、package-lock 的顶层与根包、Tauri 配置、Cargo.toml 和 C
 仅操作源码、项目文档和构建产物。验证使用临时配置、临时笔记、独立应用标识与本地测试目录；不替换 `C:\MDnote` 在用程序，不改普通便签或已有 Quick 文件，不合并两侧 Todo 差异，不连接真实 S3 验证，不提交或推送 Git。
 
 真实 Obsidian 来源跳转不在隔离测试中执行，避免打开或改变用户现有库；验证覆盖按钮命令与 ID 路由、Rust URI 校验，原生 Shell 调用通过 Windows 构建确认。
+
+## GitHub 绿色便携版分发（2026-10-22）
+
+本次从净化后的公开 MKnote 源码重新构建 Windows x64 绿色包，保留 5.2.4 功能和应用标识，不替换在用目录或迁移真实笔记。公开下载入口为 [v5.2.4 Release](https://github.com/ssatan34/MKnote/releases/tag/v5.2.4)。
+
+- 分发文件：`MKnote-portable-v5.2.4-windows-x64.zip`，14,123,289 字节。
+- ZIP SHA-256：`e24f6f842b84958f5441e13613d2ce03b804088f3cebf187047026c2c6ebdd89`。
+- EXE SHA-256：`278ee688cfa5a8ab291ec2f3439b7d9680c0a85b6d12df2ac383c11efa59b1e5`；FileVersion / ProductVersion 为 5.2.4，架构为 x86_64，未做代码签名。
+- ZIP 除 EXE 和 README.txt 外，新增 MIT LICENSE、THIRD_PARTY_NOTICES.md、LICENSES/；包含 npm/Rust 完整许可及版权声明、Rust 标准库声明、5 项 MPL 2.0 依赖的未修改源码归档。不含用户配置、笔记、开发依赖、旧历史或本机备份。
+- Rust 路径由编译选项映射，PDB 仅记录文件名；AWS-LC 使用中性路径下的真实源码目录构建，2,010 个文件与 Cargo.lock 校验通过的原始 crate 逐字节一致。EXE 未检出当前用户目录、源码绝对路径或已清除的 Figma 链接/密钥前缀。
+- 前端生产构建、Windows release 构建、ZIP 文件白名单、随包许可逐文件比对、MPL 源码校验及隔离启动/自动保存测试通过；release、portable 与 ZIP 内 EXE 哈希一致。测试使用临时目录，结束后恢复并核对原有自启注册表设置。
+- README 与随包说明包含下载、WebView2、首次运行、托盘退出、升级保留数据及 SHA-256 校验步骤。外部云服务仍由使用者自行配置，本轮未连接真实账号验收。
+
+本节记录当前公开分发包；上方 2026-10-20 的双文件绿色包及其哈希为历史构建记录。

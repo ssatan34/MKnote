@@ -8,11 +8,11 @@
 
 Windows 桌面 Markdown 便签，集成快速记录、独立待办、多标签笔记和可选的笔记工具接入。每条便签对应本地一个 `.md` 文件，基本编辑不需要云端账号。
 
-**Windows 10/11 · 源码版本 5.2.4 · 本地优先 · 绿色便携**
+**Windows 10/11 x64 · 版本 5.2.4 · 本地优先 · 绿色便携**
 
 [功能概览](#功能概览) · [获取与使用](#获取与使用) · [开发](#开发) · [数据与配置](#数据与配置) · [许可证](#许可证)
 
-> 当前为私有发布准备阶段：新仓库尚未发布安装包；主项目采用 MIT 许可证，仓库暂未公开。
+> [下载最新 Windows x64 绿色便携版](https://github.com/ssatan34/MKnote/releases/latest) · 无需安装 Node.js 或 Rust · 主项目采用 MIT 许可证。
 
 - **随手记**：用热键唤起便签，支持 Markdown 源码与可视化编辑，关闭窗口后留在托盘。
 - **桌面待办**：Quick Todo 处理任务与提醒，Quick Pocket 暂存文本、命令和路径。
@@ -41,16 +41,26 @@ Windows 桌面 Markdown 便签，集成快速记录、独立待办、多标签�
 
 ## 获取与使用
 
-新仓库目前提供源码，尚无已发布的安装包。后续分发包以 [GitHub Releases](https://github.com/ssatan34/MKnote/releases) 为准；当前可以按下方说明从源码构建。
+前往 [GitHub Releases](https://github.com/ssatan34/MKnote/releases/latest)，在 **Assets** 中下载 `MKnote-portable-v5.2.4-windows-x64.zip`。GitHub 自动生成的 `Source code` 是源码，不能直接运行。
 
 使用绿色便携包时：
 
-1. 解压到有写入权限的文件夹，运行 `MarkdownStickyNote.exe`，不要直接在压缩包内启动。
+1. 完整解压到有写入权限的文件夹，运行 `MarkdownStickyNote.exe`，不要直接在压缩包内启动，也不要放在 `Program Files` 等受保护目录。
 2. 首次运行会在程序同级目录创建配置和数据，点击「新建便签」开始记录。
 3. 关闭主窗口会隐藏到系统托盘；退出程序请使用托盘菜单。
 4. 按需在设置中配置快捷键、Quick Todo / Quick Pocket，以及外部服务。
 
-运行构建好的应用需要 Windows 10/11 和 WebView2 Runtime；不需要安装 Node.js 或 Rust。应用会写入自身目录，便携版应放在可写位置。
+运行环境为 **Windows 10/11 x64** 与 **Microsoft Edge WebView2 Runtime**，本次不提供 ARM64 原生包。若无法启动且提示缺少 WebView2，请从 [微软官网](https://developer.microsoft.com/microsoft-edge/webview2/) 安装 Evergreen Runtime 后重试。
+
+**升级**：先从托盘退出旧版，备份整个程序目录及自行设置的 Quick Todo / Quick Pocket 数据目录。将新包解压到单独文件夹检查，再更新旧目录中的 EXE、说明和许可证文件，保留 `config.json`、`File/`、`inbox/` 及自定义数据目录。不要用空目录覆盖现有笔记。WebView2 缓存和部分系统集成可能写入当前 Windows 用户目录，便携包不代表所有系统痕迹均保存在 EXE 旁。
+
+**下载校验**：同一 Release 提供 `SHA256SUMS.txt`，可在 PowerShell 中执行：
+
+```powershell
+Get-FileHash .\MKnote-portable-v5.2.4-windows-x64.zip -Algorithm SHA256
+```
+
+将结果与校验文件中的 ZIP 哈希比较。当前 EXE 未做代码签名；遇到 Windows 提示时，请先确认下载来自本仓库并核对哈希，再自行决定是否运行。问题反馈见 [Issues](https://github.com/ssatan34/MKnote/issues)，请使用示例笔记并隐藏配置中的凭据。
 
 ## 环境要求
 
@@ -76,7 +86,7 @@ npm ci
 npm run tauri dev
 ```
 
-仓库保持私有期间，克隆需要相应访问权限。首次启动会编译 Rust 依赖，耗时取决于网络和编译环境。
+首次启动会编译 Rust 依赖，耗时取决于网络和编译环境。
 
 开发时便签数据多在 `src-tauri/target/debug/`（与 debug exe 同级），**不是**源码根目录。
 
@@ -126,7 +136,9 @@ npm run pack:dev
 npm run build:green
 ```
 
-输出 `portable/`，并在项目根目录生成 `MKnote-portable-v<版本>-<时间戳>.zip`。干净 ZIP 仅包含 `MarkdownStickyNote.exe` 与 `README.txt`；真实笔记和配置不应随分发包发布。首次运行后数据写入 exe 同级目录。
+输出 `portable/`，并在项目根目录生成 `MKnote-portable-v<版本>-<时间戳>.zip`。分发 ZIP 包含 `MarkdownStickyNote.exe`、`README.txt`、`LICENSE`、`THIRD_PARTY_NOTICES.md` 和 `LICENSES/`（第三方完整声明及 MPL 依赖源码归档），不含真实笔记和配置。首次运行后数据写入 EXE 同级目录。构建绿色版使用 `--no-bundle`，不会额外生成安装包。
+
+首次打包或依赖变动后，先按 [许可证生成说明](scripts/licenses/README.md) 更新分发声明；缺少必要声明时打包会停止。
 
 安装包在：
 
@@ -284,6 +296,6 @@ npm run build:green
 
 ## 许可证
 
-MKnote 原创代码采用 [MIT License](LICENSE)，允许使用、修改和商业分发，分发时需保留版权与许可声明。仓库目前继续保持私有。
+MKnote 原创代码采用 [MIT License](LICENSE)，允许使用、修改和商业分发，分发时需保留版权与许可声明。
 
 第三方代码、依赖与参考素材适用各自的许可证，详见 [第三方声明](THIRD_PARTY_NOTICES.md)。内置 Lute 自报版本为 1.7.6，采用木兰宽松许可证第 2 版；上游精确提交、换行差异与固定文件哈希见 [Lute 来源记录](src/vendor/README.md)。

@@ -3,6 +3,7 @@ name = "md-sticky-note"
 version = "5.2.4"
 description = "Desktop Markdown sticky notes"
 authors = ["Sin"]
+license = "MIT"
 edition = "2021"
 
 [lib]

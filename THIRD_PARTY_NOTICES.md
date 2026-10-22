@@ -42,12 +42,18 @@ MKnote 原创代码采用根目录 [MIT License](LICENSE)。第三方代码、�
 
 保留两份原始素材声明：[capsule-ui-ref](Refs/capsule-ui-ref/ATTRIBUTIONS.md)、[timeline-ui](Refs/timeline-ui/ATTRIBUTIONS.md)。其中的 Unsplash 素材适用 [Unsplash License](https://unsplash.com/license)，不适用本项目 MIT；引用该声明不表示当前应用运行时包含相应照片。
 
-## 包管理器依赖与后续二进制分发
+## 包管理器依赖与二进制分发
 
 完整版本与许可元数据见 [依赖清单](LICENSES/dependency-inventory.json)。npm 精确版本来自 package-lock.json，许可信息取对应版本的安装包元数据、锁文件或官方注册表；Rust 版本与许可来自 Cargo.lock 对应的元数据。清单包括 355 个 npm 条目及 Windows 目标图中的 432 个 Rust 依赖，不包含本机缓存路径或私有配置，也不代表全部条目都进入最终可执行文件。
 
 主要依赖包括 React、Milkdown / ProseMirror、Radix UI、Tauri、AWS SDK for Rust、reqwest、DOMPurify、lightningcss、highlight.js 等。以清单中精确版本的许可为准，不能假设所有依赖均为 MIT。
 
-部分依赖采用 MPL-2.0 或提供包含 MPL-2.0 的双重许可选项，例如 lightningcss、部分 Rust 解析器依赖与 DOMPurify。后续分发二进制时，应根据实际选用许可收集完整版权声明，并履行相关源码获取等义务；参见 [Mozilla 官方 MPL FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)。
+Windows x64 便携包附带 [npm 完整许可与版权文本](LICENSES/npm-dependencies.txt)、[Rust 完整许可与版权文本](LICENSES/rust-dependencies.txt) 和 [分发依赖清单](LICENSES/binary-dependency-manifest.json)。文本来自精确版本的已安装 npm 包与 Cargo 锁定依赖，并补充包内 NOTICE、COPYRIGHT 和嵌套原生库声明。有意包含部分构建工具，不将清单条目全部视为最终 EXE 中的运行时代码。生成工具及方法见 [许可证生成说明](scripts/licenses/README.md)。
 
-本次准备的是源码仓库，没有发布安装包或绿色包。现有打包脚本不会自动收集这里的全部声明；发布二进制前须将本项目 LICENSE、本文件及实际包含组件的完整版权和许可文件随包提供。依赖清单不能替代分发所需的许可原文。
+Cargo 的可选许可按 `scripts/licenses/about.toml` 优先选择 MIT，组合许可保留各项要求。DOMPurify 选择其 Apache-2.0 选项，完整双重许可原文仍保留。lightningcss 为构建期 CSS 工具，其原生可执行代码不随本便携 EXE 分发；相关声明仍收录供核对。
+
+MPL-2.0 依赖包括 cssparser 0.36.0、cssparser-macros 0.6.1、dtoa-short 0.3.5、option-ext 0.2.0 和 selectors 0.36.1。其未修改源码按 MPL-2.0 提供于随包 [MPL-2.0-sources.zip](LICENSES/MPL-2.0-sources.zip)；其中 `.crate` 为上游 gzip 压缩 tar 源码归档，可用 `tar -xzf <文件名.crate>` 解压。精确下载地址、版本与 SHA-256 见 [源码清单](LICENSES/mpl-sources.json)，归档校验和与 Cargo.lock 一致。MPL 全文见 Rust 许可文本；这些第三方源码的权利不受本项目 MIT 限制。源码提供方式参照 [Mozilla 官方 MPL FAQ](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)。
+
+绿色包随附本项目 LICENSE、本文件和 LICENSES 目录。重新分发时请一并保留，不以依赖元数据清单替代完整许可证。Microsoft Edge WebView2 Runtime 由用户通过微软渠道单独获取，不打入本 ZIP。
+
+Rust 标准库及其内部第三方代码的完整版权与许可文本另见 [Rust-Standard-Library.html](LICENSES/Rust-Standard-Library.html)，直接复制自本次编译所用官方 Rust 工具链；[工具链版本](LICENSES/rust-toolchain.txt) 与应用依赖清单分别记录。该文件包括跨目标和构建工具声明，不表示其中所有组件均链接到本 Windows EXE。
